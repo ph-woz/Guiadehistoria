@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Jogar Quiz</title>
+
+
+<script>
+
+var dado;
+
+function init() {
+    document.addEventListener("deviceready", onDR, false);
+} 
+function onDR(){
+    document.addEventListener("backbutton", backKeyDown, true);
+}
+function backKeyDown() { 
+
+location.href='index.html';
+
+}
+
+function carrega(){
+
+onDR();
+document.getElementById('acerto').innerHTML += localStorage.getItem('acerto').length;
+document.getElementById('erro').innerHTML += localStorage.getItem('erro').length;
+document.getElementById('jogo').innerHTML += localStorage.getItem('acerto').length + localStorage.getItem('erro').length;
+
+}
+
+
+function filtrar(){
+document.getElementById('cancelar').style.display = 'block';
+document.getElementById('filtrar').style.display = 'none';
+document.getElementById('jogar').style.display = 'none';
+document.getElementById('painel-filtrar-quiz').style.display = 'block';
+}
+function cancelar(){
+document.getElementById('filtrar').style.display = 'block';
+document.getElementById('jogar').style.display = 'block';
+document.getElementById('cancelar').style.display = 'none';
+document.getElementById('painel-filtrar-quiz').style.display = 'none';
+}
+
+</script>
+
+</head>
+
+<body background="img/bgbody.jpg" onload="carrega()">
+
+<div class="header">
+
+<hr><h1 id="titulo">Guia de História</h1><hr>
+
+<strong>
+<div id="scores">
+<div id="score-jogo"><span id="jogo">Jogou: </span></div>
+<div id="score-acerto"><span id="acerto">Acertou: </span></div>
+<div id="score-erro"><span id="erro">Errou: </span></div>
+</div>
+</strong>
+
+<!--<button id="filtrar" onclick="filtrar()"> <strong>Filtrar</strong></button>-->
+<button id="cancelar" onclick="cancelar()" style="display:none;"> <strong>Cancelar</strong></button>
+
+<div id="painel-filtrar-quiz" style=" display:none;">
+    <button id="btn-conteudo" onclick="dado = 'historiadobr'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">História do Brasil</button>
+    <button id="btn-conteudo" onclick="dado = 'guerras'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Guerras Napoleônicas</button>
+    <button id="btn-conteudo" onclick="dado = 'nazismo'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Nazismo e Facismo</button>
+</div>
+
+<br><br>
+<div id="jogar">
+<button id="btn-conteudo" onclick="dado = ''; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Jogar</button>
+</div>
+
+<br>
+
+</div> <!-- header-->
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</body>
+</html>

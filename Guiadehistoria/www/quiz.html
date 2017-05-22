@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Quiz</title>
+
+
+<script>
+
+function onConfirm(button) {
+
+    if(button == 1){ carrega(); }
+    if(button == 2){ location.href='quizlogin.html'; }
+}
+
+
+function showConfirm() {
+    navigator.notification.confirm(
+        'Deseja continuar?',
+        onConfirm,              
+        'Aguardando',       
+        'Sim,Não'          
+    );
+}
+
+ function acertoponto() {
+      
+  var acerto = localStorage.getItem('acerto');
+	acerto = acerto + 1;
+	localStorage.setItem('acerto', acerto); 
+	showConfirm();
+ }
+
+ function erroponto() {
+
+	var erro = localStorage.getItem('erro');
+	erro = erro + 1;
+	localStorage.setItem('erro', erro); 
+	showConfirm();
+ }
+
+    function acerto() {
+        navigator.notification.alert(
+            'Acertou! :)', 
+            acertoponto,         
+            'Parabéns',         
+            'Ok'                  
+        );
+    }
+
+    function erro() {
+        navigator.notification.alert(
+            'Errou! :( \n\nResposta correta:\n' +  respostacerta, 
+            erroponto,         
+            'Ops',         
+            'Ok'                  
+        );
+    }
+
+
+function init() {
+    document.addEventListener("deviceready", onDR, false);
+} 
+function onDR(){
+    document.addEventListener("backbutton", backKeyDown, true);
+}
+function backKeyDown() { 
+    
+    if(document.getElementById('alternativa1').checked == false &&
+       document.getElementById('alternativa2').checked == false &&
+       document.getElementById('alternativa3').checked == false &&       
+       document.getElementById('alternativa4').checked == false)
+       {
+    	navigator.notification.alert('Termine este Quiz para sair.', null,'Ops','Ok');
+ 	   }
+}
+
+var dado;
+var x;
+
+function carrega(){
+
+	onDR();
+	dado = sessionStorage.getItem('dado'); 
+  check1 = false;
+  check2 = false;
+  check3 = false;
+  check4 = false;
+
+
+  if(dado == 'nazismo'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
+  if(x == 1){
+ 	simulado1();
+ 	}
+ 	if(x == 2){
+ 	simulado2();
+ 	}
+ 	if(x == 3){
+ 	simulado3();
+ 	}
+ 	if(x == 4){
+	simulado4();
+ 	}
+ 	if(x == 5){
+ 	simulado5();
+ 	}
+ 	if(x == 6){
+	simulado6();
+ 	}
+ 	if(x == 7){
+ 	simulado7();
+ 	}
+ 	if(x == 8){
+ 	simulado8();
+ 	}
+ 	if(x == 9){
+ 	simulado9();
+ 	}
+ 	if(x == 10){
+ 	simulado10();
+ 	}
+ 	if(x > 50){
+ 	carrega();
+ 	}
+
+  }
+
+  if(dado == 'guerras'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
+  	if(x == 1){
+ 	simulado1();
+ 	}
+ 	if(x == 2){
+ 	simulado2();
+ 	}
+ 	if(x == 3){
+ 	simulado3();
+ 	}
+ 	if(x == 4){
+	simulado4();
+ 	}
+ 	if(x == 5){
+ 	simulado5();
+ 	}
+ 	if(x == 6){
+	simulado6();
+ 	}
+ 	if(x == 7){
+ 	simulado7();
+ 	}
+ 	if(x == 8){
+ 	simulado8();
+ 	}
+ 	if(x == 9){
+ 	simulado9();
+ 	}
+ 	if(x == 10){
+ 	simulado10();
+ 	}
+ 	if(x > 50){
+ 	carrega();
+ 	}
+
+  }
+
+  if(dado == 'historiadobr'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
+  	if(x == 1){
+ 	simulado1();
+ 	}
+ 	if(x == 2){
+ 	simulado2();
+ 	}
+ 	if(x == 3){
+ 	simulado3();
+ 	}
+ 	if(x == 4){
+	simulado4();
+ 	}
+ 	if(x == 5){
+ 	simulado5();
+ 	}
+ 	if(x == 6){
+	simulado6();
+ 	}
+ 	if(x == 7){
+ 	simulado7();
+ 	}
+ 	if(x == 8){
+ 	simulado8();
+ 	}
+ 	if(x == 9){
+ 	simulado9();
+ 	}
+ 	if(x == 10){
+ 	simulado10();
+ 	}
+ 	if(x > 50){
+ 	carrega();
+ 	}
+
+  }
+
+  if(dado == '' || dado == null){ x = Math.floor((Math.random() * 13) + 1);  //VALOR REAL x=total-simulado / x = 100 
+    //document.getElementById('simulado-recebe').innerHTML = x;
+
+ 	if(x == 1){
+ 	simulado1();
+ 	}
+ 	if(x == 2){
+ 	simulado2();
+ 	}
+ 	if(x == 3){
+ 	simulado3();
+ 	}
+ 	if(x == 4){
+	simulado4();
+ 	}
+ 	if(x == 5){
+ 	simulado5();
+ 	}
+ 	if(x == 6){
+	simulado6();
+ 	}
+ 	if(x == 7){
+ 	simulado7();
+ 	}
+ 	if(x == 8){
+ 	simulado8();
+ 	}
+ 	if(x == 9){
+ 	simulado9();
+ 	}
+ 	if(x == 10){
+ 	simulado10();
+ 	}
+  if(x == 11){
+  simulado11();
+  }
+  if(x == 12){
+  simulado12();
+  }
+  if(x == 13){
+  simulado13();
+  }
+  if(x >= 14){
+  carrega();
+  }
+  }
+}
+
+
+function verifica(){ //document.getElementById('simulado-recebe').innerHTML = x;
+
+  if(x == 1){
+  simulado1();
+  }
+  if(x == 2){
+  simulado2();
+  }
+  if(x == 3){
+  simulado3();
+  }
+  if(x == 4){
+  simulado4();
+  }
+  if(x == 5){
+  simulado5();
+  }
+  if(x == 6){
+  simulado6();
+  }
+  if(x == 7){
+  simulado7();
+  }
+  if(x == 8){
+  simulado8();
+  }
+  if(x == 9){
+  simulado9();
+  }
+  if(x == 10){
+  simulado10();
+  }
+  if(x == 11){
+  simulado11();
+  }
+  if(x == 12){
+  simulado12();
+  }
+  if(x == 13){
+  simulado13();
+  }
+  if(x >= 14){
+  carrega();
+  }
+}
+
+
+var respostacerta;
+var check1 = document.getElementById('alternativa1').checked;
+var check2 = document.getElementById('alternativa2').checked;
+var check3 = document.getElementById('alternativa3').checked;
+var check4 = document.getElementById('alternativa4').checked;
+
+
+function simulado1(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+  	document.getElementById('pergunta').innerHTML = "Qual era a capital da Alemanha durante a Segunda Guerra Mundial?";
+
+  	document.getElementById('label-botao1').innerHTML = 'Hamburgo';
+    document.getElementById('label-botao2').innerHTML = 'Munique';
+    document.getElementById('label-botao3').innerHTML = 'Estocombo';
+    document.getElementById('label-botao4').innerHTML = 'Berlim';
+  }
+
+  	respostacerta = document.getElementById('label-botao4').innerHTML;
+
+	if(check1 == true){
+  erro();		
+	}
+	if(check2 == true){
+	erro();	
+	}
+	if(check3 == true){
+	erro();		
+	}
+	if(check4 == true){
+  acerto();
+	}
+
+}
+
+
+function simulado2(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+
+    document.getElementById('pergunta').innerHTML = "Quais foram os filósofos que idealizaram o socialismo?";
+
+    document.getElementById('label-botao1').innerHTML = 'Karl Marx e Buda';
+    document.getElementById('label-botao2').innerHTML = 'Platão e Aristóteles';
+    document.getElementById('label-botao3').innerHTML = 'Karl Marx e Friedrich Engels';
+    document.getElementById('label-botao4').innerHTML = 'Sócrates e Platão';
+  }
+
+    respostacerta = document.getElementById('label-botao3').innerHTML;
+
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  erro(); 
+  }
+  if(check3 == true){
+  acerto();   
+  }
+  if(check4 == true){
+  erro();
+  }
+
+}
+
+
+function simulado3(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+    document.getElementById('pergunta').innerHTML = "Quanto tempo durou a Primeira Guerra Mundial?";
+
+    document.getElementById('label-botao1').innerHTML = '5 anos';
+    document.getElementById('label-botao2').innerHTML = '3 anos';
+    document.getElementById('label-botao3').innerHTML = '10 anos';
+    document.getElementById('label-botao4').innerHTML = '4 anos';
+  }
+
+    respostacerta = document.getElementById('label-botao4').innerHTML;
+
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  erro(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
+  acerto();
+  }
+
+}
+
+
+function simulado4(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+    document.getElementById('pergunta').innerHTML = "Quem lançou as bombas atômicas no Japão?";
+
+    document.getElementById('label-botao1').innerHTML = 'Inglaterra';
+    document.getElementById('label-botao2').innerHTML = 'Estados Unidos';
+    document.getElementById('label-botao3').innerHTML = 'Alemanha';
+    document.getElementById('label-botao4').innerHTML = 'Rússia';
+  }
+
+    respostacerta = document.getElementById('label-botao2').innerHTML;
+
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  acerto(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
+  erro();
+  }
+
+}
+
+
+function simulado5(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+    document.getElementById('pergunta').innerHTML = "Quais foram as cidades atingidas pelas bombas atômicas?";
+
+    document.getElementById('label-botao1').innerHTML = 'Tókio e Nagasaki';
+    document.getElementById('label-botao2').innerHTML = 'Hiroshima e Nagasaki';
+    document.getElementById('label-botao3').innerHTML = 'Hiroshima e Pequim';
+    document.getElementById('label-botao4').innerHTML = 'Berlim e Hiroshima';
+  }
+
+    respostacerta = document.getElementById('label-botao2').innerHTML;
+
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  acerto(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
+  erro();
+  }
+
+}
+
+
+function simulado6(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+    document.getElementById('pergunta').innerHTML = "Qual país se dividiu em dois durante a guerra fria?";
+
+    document.getElementById('label-botao1').innerHTML = 'Japão';
+    document.getElementById('label-botao2').innerHTML = 'China';
+    document.getElementById('label-botao3').innerHTML = 'Estados Unidos';
+    document.getElementById('label-botao4').innerHTML = 'Alemanha';
+  }
+
+    respostacerta = document.getElementById('label-botao4').innerHTML;
+
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  erro(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
+  acerto();
+  }
+
+}
+
+
+function simulado7(){
+
+  if(check1 == false || check2 == false || check3 == false || check4 == false){
+    document.getElementById('pergunta').innerHTML = "Quais são os dois sistemas monetários que dominaram depois a guerra fria?";
+
+    document.getElementById('label-botao1').innerHTML = 'Capitalismo e Socialismo';
+    document.getElementById('label-botao2').innerHTML = 'Apenas Capitalismo';
+    document.getElementById('label-botao3').innerHTML = 'Apenas Socialismo';
+    document.getElementById('label-botao4').innerHTML = 'Socialismo e Anarcocapitalismo';
+  }
+
+    respostacerta = document.getElementById('label-botao1').innerHTML;
+
+  if(check1 == true){
+  acerto();   
+  }
+  if(check2 == true){
+  erro(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
+  erro();
+  }
+
+}
+
+
+function simulado8(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por quais países foi formado o grupo do Eixo, na Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Itália, Alemanha e Japão'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha e Japão'; 
+document.getElementById('label-botao3').innerHTML = 'Brasil e Alemanha'; 
+document.getElementById('label-botao4').innerHTML = 'Japão, Alemanha, Itália e URSS'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+}}
+
+
+function simulado9(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o presidente americano durante a Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Kennedy'; 
+document.getElementById('label-botao2').innerHTML = 'Bush'; 
+document.getElementById('label-botao3').innerHTML = 'Theodore Roosevelt'; 
+document.getElementById('label-botao4').innerHTML = 'Franklin Roosevelt'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+}} 
+
+function simulado10(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Na Primeira Guerra Mundial, quem foi o primeiro país a declarar guerra a Iugoslávia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'França'; 
+document.getElementById('label-botao2').innerHTML = 'Império Otomano'; 
+document.getElementById('label-botao3').innerHTML = 'Império Austro-Húngaro'; 
+document.getElementById('label-botao4').innerHTML = 'Estados Unidos'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+
+function simulado11(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o ditador soviético durante a Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Josseph Stalin'; 
+document.getElementById('label-botao2').innerHTML = 'Lenin'; 
+document.getElementById('label-botao3').innerHTML = 'Vladmir Puting'; 
+document.getElementById('label-botao4').innerHTML = 'Hitler'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado12(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o estopim da Primeira Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Questão balcânica'; 
+document.getElementById('label-botao2').innerHTML = 'Assassinato do arquiduque Francisco Ferdinando'; 
+document.getElementById('label-botao3').innerHTML = 'Disputas comerciais entre Alemanha e Reino Unido'; 
+document.getElementById('label-botao4').innerHTML = 'Revanchismo francês'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado13(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais países faziam parte da Tríplice Aliança?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Alemanha, Itália e Japão'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha, Rússia e Império Austro-Húngaro'; 
+document.getElementById('label-botao3').innerHTML = 'Alemanha, Império Austro-Húngaro e Itália'; 
+document.getElementById('label-botao4').innerHTML = 'Reino Unido, Alemanha e EUA'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+</script>
+
+</head>
+
+<body background="img/bgbody.jpg" onload="carrega()">
+
+<div class="header">
+
+    <hr><h1 id="titulo">Guia de História</h1><hr>
+    <br><h1 id="pergunta"></h1><br>
+     <!-- <br><h1 id="simulado-recebe"></h1><br> -->
+
+
+<div id="simulado"><table>
+<tr><td><button onclick="javascript:check1 = true;verifica();" id="btn-conteudo"> <label id="label-botao1"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check2 = true;verifica();" id="btn-conteudo"> <label id="label-botao2"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check3 = true;verifica();" id="btn-conteudo"> <label id="label-botao3"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check4 = true;verifica();" id="btn-conteudo"> <label id="label-botao4"></label></button></td></tr><br>
+</table></div> <!-- /simulado -->
+
+
+</div> <!-- header-->
+
+	<div style="display: none;">
+	<input type="radio" name="alternativa" id="alternativa1" value="verdadeira"> 
+	<input type="radio" name="alternativa" id="alternativa2" value="verdadeira"> 
+	<input type="radio" name="alternativa" id="alternativa3" value="verdadeira"> 
+	<input type="radio" name="alternativa" id="alternativa4" value="verdadeira">
+	</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</body>
+</html>
