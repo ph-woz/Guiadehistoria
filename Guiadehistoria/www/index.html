@@ -1824,7 +1824,23 @@ var tabela = document.getElementById('painel-index');
 
 function vermais() {
 
-onDR();    
+onDR();
+
+      // Set AdMobAds options:  banner: ca-app-pub-8177479416631931/7394143205
+      admob.setOptions({
+        publisherId:          "ca-app-pub-8177479416631931/5417882404",  // Required 
+        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
+        tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional 
+        tappxShare:           0.5                                        // Optional 
+      });
+      
+      // Start showing banners (atomatic when autoShowBanner is set to true) 
+      admob.createBannerView();
+      
+      // Request interstitial (will present automatically when autoShowInterstitial is set to true) 
+      admob.requestInterstitialAd();
+
 document.getElementById('biografias-conteudo').style.display = 'none';
 document.getElementById('historiadobr-conteudo').style.display = 'none';
 document.getElementById('painel-filtrar').style.display = 'none';
