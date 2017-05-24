@@ -1817,30 +1817,14 @@ var tabela = document.getElementById('painel-index');
 
 function vermais() {
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
 onDR();
+
 document.getElementById('biografias-conteudo').style.display = 'none';
 document.getElementById('historiadobr-conteudo').style.display = 'none';
 document.getElementById('painel-filtrar').style.display = 'none';
 document.getElementById('titulo-filtrado').style.display = 'none';
 document.getElementById('btn-cancel-filtro').style.display = 'none';
     
-}
-
- function onDeviceReady() {
-
-        admob.setOptions({
-        publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
-        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
-        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
-        tappxIdAndroid:       "/120940746/Pub-18450-Android-4395",        // Optional 
-        tappxShare:           0.5                                        // Optional 
-      });
-      
-      admob.createBannerView();
-      admob.requestInterstitialAd(); 
-
 }
 
 
@@ -1903,6 +1887,18 @@ function init() {
     document.addEventListener("deviceready", onDR, false);
 } 
 function onDR(){
+
+	      admob.setOptions({
+        publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
+        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
+        tappxIdAndroid:       "/120940746/Pub-18450-Android-4395",        // Optional 
+        tappxShare:           0.5                                        // Optional 
+      });
+      
+      admob.createBannerView();
+      admob.requestInterstitialAd();
+
     document.addEventListener("backbutton", backKeyDown, true);
 }
 function backKeyDown() { 
