@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -18,7 +15,6 @@
 
 var field;
 var texto;
-
 
 function buscar(){
 
@@ -1774,16 +1770,12 @@ filtro();
     <div class="header">
 
         <hr><h1 id="titulo">Guia de História</h1><hr>
-            <input type="search" name="search" placeholder="Buscar" id="search" onkeydown="filtro()">
-         <!--<div id="zooms">
-            <button onclick="maiszoom()" id="zoom">+</button><button onclick="menoszoom()" id="zoom">-</button>
-         </div> -->
+            <input type="search" name="search" placeholder="Buscar" id="search" onkeyup="buscar();filtro();limpar();" onsearch="OnSearch(this)">
     
-
-
 <script>
 
 function limpar(){
+
 	x = document.getElementById('search').value;
 
 	if(x == "" && emfiltro == null){
@@ -1792,7 +1784,7 @@ function limpar(){
 }
 
 var emfiltro;
-//document.getElementById("search").addEventListener("keyup", filtro);
+document.getElementById("search").addEventListener("keyup", filtro);
 
 function OnSearch(input) {
 
@@ -1808,8 +1800,8 @@ function OnSearch(input) {
 
 function filtro() {
 
- //   var x = document.getElementById("search");
- //   x.value = x.value.toLowerCase();
+    var x = document.getElementById("search");
+    x.value = x.value.toLowerCase();
 
 var filtro = document.getElementById('search');
 var tabela = document.getElementById('painel-index');
@@ -1825,7 +1817,19 @@ var tabela = document.getElementById('painel-index');
 
 function vermais() {
 
-onDR();    
+onDR();
+
+    /*  admob.setOptions({
+        publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
+        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
+        tappxIdAndroid:       "/120940746/Pub-18450-Android-4395",        // Optional 
+        tappxShare:           0.5                                        // Optional 
+      });
+      
+      admob.createBannerView();
+      admob.requestInterstitialAd(); */
+
 document.getElementById('biografias-conteudo').style.display = 'none';
 document.getElementById('historiadobr-conteudo').style.display = 'none';
 document.getElementById('painel-filtrar').style.display = 'none';
@@ -1887,7 +1891,6 @@ document.getElementById('biografias-conteudo').style.display = 'none';
 document.getElementById('historiadobr-conteudo').style.display = 'none';
 document.getElementById('btn-cancel-filtro').style.display = 'none';
 cancelar();
-
 
 }
 
@@ -2517,16 +2520,6 @@ function backKeyDown() {
 </div>     
             <p id="texto" align="left"></p>
 </div>
-
-
-    <!--<div class="app">
-
-      <h1>Guia de História</h1>
-
-        <button onclick="alertar()">Alertar</button>
-        <input type="button" name="botao" onclick="alertar()" value="ALERTAR 2">
-
-    </div> -->
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
