@@ -1886,9 +1886,12 @@ cancelar();
 function init() {
     document.addEventListener("deviceready", onDR, false);
 } 
-function onDR(){
 
-	      admob.setOptions({
+
+function onDeviceReady() {
+      document.removeEventListener('deviceready', onDeviceReady, false);
+       
+      admob.setOptions({
         publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
         interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
         tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
@@ -1898,6 +1901,22 @@ function onDR(){
       
       admob.createBannerView();
       admob.requestInterstitialAd();
+    }
+    
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDR(){
+
+/*	      admob.setOptions({
+        publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
+        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
+        tappxIdAndroid:       "/120940746/Pub-18450-Android-4395",        // Optional 
+        tappxShare:           0.5                                        // Optional 
+      });
+      
+      admob.createBannerView();
+      admob.requestInterstitialAd(); */
 
     document.addEventListener("backbutton", backKeyDown, true);
 }
