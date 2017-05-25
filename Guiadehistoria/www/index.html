@@ -1902,7 +1902,11 @@ function backKeyDown() {
 	navigator.app.exitApp(); 
 	}
 	if(document.getElementById('search').value != "" && emfiltro == "biografias"){
-	window.history.back();
+	alert('ok');
+	field = '';
+	document.getElementById("texto").innerHTML = '';
+	biografias();
+
 	}
 
 	if(document.getElementById('search').value != ""){
