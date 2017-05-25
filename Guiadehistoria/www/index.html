@@ -1894,18 +1894,17 @@ function onDeviceReady() {
 
 function onDR(){
 
-	if(emfiltro == null){
-    	document.addEventListener("backbutton", backKeyDown, true);
-	}
-	if(emfiltro == "biografias" && field != null){
-		alert('tst');
-		//biografias();
-	}
+    document.addEventListener("backbutton", backKeyDown, true);
 }
 function backKeyDown() { 
-	if(document.getElementById('search').value == ""){
+
+	if(document.getElementById('search').value == "" && emfiltro == null){
 	navigator.app.exitApp(); 
 	}
+	if(document.getElementById('search').value != "" && emfiltro == "biografias"){
+	window.history.back();
+	}
+
 	if(document.getElementById('search').value != ""){
 	document.getElementById("texto").innerHTML = '';
 	field = null;
