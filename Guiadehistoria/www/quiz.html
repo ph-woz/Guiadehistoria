@@ -35,17 +35,17 @@ function showConfirm() {
  function acertoponto() {
       
   var acerto = localStorage.getItem('acerto');
-	acerto = acerto + 1;
-	localStorage.setItem('acerto', acerto); 
-	showConfirm();
+  acerto = acerto + 1;
+  localStorage.setItem('acerto', acerto); 
+  showConfirm();
  }
 
  function erroponto() {
 
-	var erro = localStorage.getItem('erro');
-	erro = erro + 1;
-	localStorage.setItem('erro', erro); 
-	showConfirm();
+  var erro = localStorage.getItem('erro');
+  erro = erro + 1;
+  localStorage.setItem('erro', erro); 
+  showConfirm();
  }
 
     function acerto() {
@@ -80,227 +80,191 @@ function backKeyDown() {
        document.getElementById('alternativa3').checked == false &&       
        document.getElementById('alternativa4').checked == false)
        {
-    	navigator.notification.alert('Termine este Quiz para sair.', null,'Ops','Ok');
- 	   }
+      navigator.notification.alert('Termine este Quiz para sair.', null,'Ops','Ok');
+     }
 }
 
-var dado;
+
 var x;
 
 function carrega(){
 
-	onDR();
-	dado = sessionStorage.getItem('dado'); 
+  onDR();
   check1 = false;
   check2 = false;
   check3 = false;
   check4 = false;
 
-
-  if(dado == 'nazismo'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
-  if(x == 1){
- 	simulado1();
- 	}
- 	if(x == 2){
- 	simulado2();
- 	}
- 	if(x == 3){
- 	simulado3();
- 	}
- 	if(x == 4){
-	simulado4();
- 	}
- 	if(x == 5){
- 	simulado5();
- 	}
- 	if(x == 6){
-	simulado6();
- 	}
- 	if(x == 7){
- 	simulado7();
- 	}
- 	if(x == 8){
- 	simulado8();
- 	}
- 	if(x == 9){
- 	simulado9();
- 	}
- 	if(x == 10){
- 	simulado10();
- 	}
- 	if(x > 50){
- 	carrega();
- 	}
-
-  }
-
-  if(dado == 'guerras'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
-  	if(x == 1){
- 	simulado1();
- 	}
- 	if(x == 2){
- 	simulado2();
- 	}
- 	if(x == 3){
- 	simulado3();
- 	}
- 	if(x == 4){
-	simulado4();
- 	}
- 	if(x == 5){
- 	simulado5();
- 	}
- 	if(x == 6){
-	simulado6();
- 	}
- 	if(x == 7){
- 	simulado7();
- 	}
- 	if(x == 8){
- 	simulado8();
- 	}
- 	if(x == 9){
- 	simulado9();
- 	}
- 	if(x == 10){
- 	simulado10();
- 	}
- 	if(x > 50){
- 	carrega();
- 	}
-
-  }
-
-  if(dado == 'historiadobr'){ x = Math.floor((Math.random() * 50) + 1);  //VALOR REAL x=limite-simulado-filtro / x = 10 
-  	if(x == 1){
- 	simulado1();
- 	}
- 	if(x == 2){
- 	simulado2();
- 	}
- 	if(x == 3){
- 	simulado3();
- 	}
- 	if(x == 4){
-	simulado4();
- 	}
- 	if(x == 5){
- 	simulado5();
- 	}
- 	if(x == 6){
-	simulado6();
- 	}
- 	if(x == 7){
- 	simulado7();
- 	}
- 	if(x == 8){
- 	simulado8();
- 	}
- 	if(x == 9){
- 	simulado9();
- 	}
- 	if(x == 10){
- 	simulado10();
- 	}
- 	if(x > 50){
- 	carrega();
- 	}
-
-  }
-
-  if(dado == '' || dado == null){ x = Math.floor((Math.random() * 13) + 1);  //VALOR REAL x=total-simulado / x = 100 
-    //document.getElementById('simulado-recebe').innerHTML = x;
-
- 	if(x == 1){
- 	simulado1();
- 	}
- 	if(x == 2){
- 	simulado2();
- 	}
- 	if(x == 3){
- 	simulado3();
- 	}
- 	if(x == 4){
-	simulado4();
- 	}
- 	if(x == 5){
- 	simulado5();
- 	}
- 	if(x == 6){
-	simulado6();
- 	}
- 	if(x == 7){
- 	simulado7();
- 	}
- 	if(x == 8){
- 	simulado8();
- 	}
- 	if(x == 9){
- 	simulado9();
- 	}
- 	if(x == 10){
- 	simulado10();
- 	}
-  if(x == 11){
-  simulado11();
-  }
-  if(x == 12){
-  simulado12();
-  }
-  if(x == 13){
-  simulado13();
-  }
-  if(x >= 14){
-  carrega();
-  }
-  }
+  x = Math.floor((Math.random() * 161) + 1);
+  verifica();
 }
 
+function verifica(){
 
-function verifica(){ //document.getElementById('simulado-recebe').innerHTML = x;
+  if(x == 1){ simulado1(); }
+  if(x == 2){ simulado2(); }
+  if(x == 3){ simulado3(); }
+  if(x == 4){ simulado4(); }
+  if(x == 5){ simulado5(); }
+  if(x == 6){ simulado6(); }
+  if(x == 7){ simulado7(); }
+  if(x == 8){ simulado8(); }
+  if(x == 9){ simulado9(); }
+  if(x == 10){ simulado10(); }
+  if(x == 11){ simulado11(); }
+  if(x == 12){ simulado12(); }
+  if(x == 13){ simulado13(); }
+  if(x == 14){ simulado14(); }
+  if(x == 15){ simulado15(); }
+  if(x == 16){ simulado16(); }
+  if(x == 17){ simulado17(); }
+  if(x == 18){ simulado18(); }
+  if(x == 19){ simulado19(); }
+  if(x == 20){ simulado20(); }
+  if(x == 21){ simulado21(); }
+  if(x == 22){ simulado22(); }
+  if(x == 23){ simulado23(); }
+  if(x == 24){ simulado24(); }
+  if(x == 25){ simulado25(); }
+  if(x == 26){ simulado26(); }
+  if(x == 27){ simulado27(); }
+  if(x == 28){ simulado28(); }
+  if(x == 29){ simulado29(); }
+  if(x == 30){ simulado30(); }
+  if(x == 31){ simulado31(); }
+  if(x == 32){ simulado32(); }
+  if(x == 33){ simulado33(); }
+  if(x == 34){ simulado34(); }
+  if(x == 35){ simulado35(); }
+  if(x == 36){ simulado36(); }
+  if(x == 37){ simulado37(); }
+  if(x == 38){ simulado38(); }
+  if(x == 39){ simulado39(); }
+  if(x == 40){ simulado40(); }
+  if(x == 41){ simulado41(); }
+  if(x == 42){ simulado42(); }
+  if(x == 43){ simulado43(); }
+  if(x == 44){ simulado44(); }
+  if(x == 45){ simulado45(); }
+  if(x == 46){ simulado46(); }
+  if(x == 47){ simulado47(); }
+  if(x == 48){ simulado48(); }
+  if(x == 49){ simulado49(); }
+  if(x == 50){ simulado50(); }
+  if(x == 51){ simulado51(); }
+  if(x == 52){ simulado52(); }
+  if(x == 53){ simulado53(); }
+  if(x == 54){ simulado54(); }
+  if(x == 55){ simulado55(); }
+  if(x == 56){ simulado56(); }
+  if(x == 57){ simulado57(); }
+  if(x == 58){ simulado58(); }
+  if(x == 59){ simulado59(); }
+  if(x == 60){ simulado60(); }
+  if(x == 61){ simulado61(); }
+  if(x == 62){ simulado62(); }
+  if(x == 63){ simulado63(); }
+  if(x == 64){ simulado64(); }
+  if(x == 65){ simulado65(); }
+  if(x == 66){ simulado66(); }
+  if(x == 67){ simulado67(); }
+  if(x == 68){ simulado68(); }
+  if(x == 69){ simulado69(); }
+  if(x == 70){ simulado70(); }
+  if(x == 71){ simulado71(); }
+  if(x == 72){ simulado72(); }
+  if(x == 73){ simulado73(); }
+  if(x == 74){ simulado74(); }
+  if(x == 75){ simulado75(); }
+  if(x == 76){ simulado76(); }
+  if(x == 77){ simulado77(); }
+  if(x == 78){ simulado78(); }
+  if(x == 79){ simulado79(); }
+  if(x == 80){ simulado80(); }
+  if(x == 81){ simulado81(); }
+  if(x == 82){ simulado82(); }
+  if(x == 83){ simulado83(); }
+  if(x == 84){ simulado84(); }
+  if(x == 85){ simulado85(); }
+  if(x == 86){ simulado86(); }
+  if(x == 87){ simulado87(); }
+  if(x == 88){ simulado88(); }
+  if(x == 89){ simulado89(); }
+  if(x == 90){ simulado90(); }
+  if(x == 91){ simulado91(); }
+  if(x == 92){ simulado92(); }
+  if(x == 93){ simulado93(); }
+  if(x == 94){ simulado94(); }
+  if(x == 95){ simulado95(); }
+  if(x == 96){ simulado96(); }
+  if(x == 97){ simulado97(); }
+  if(x == 98){ simulado98(); }
+  if(x == 99){ simulado99(); }
+  if(x == 100){ simulado100(); }
+  if(x == 101){ simulado101(); }
+  if(x == 102){ simulado102(); }
+  if(x == 103){ simulado103(); }
+  if(x == 104){ simulado104(); }
+  if(x == 105){ simulado105(); }
+  if(x == 106){ simulado106(); }
+  if(x == 107){ simulado107(); }
+  if(x == 108){ simulado108(); }
+  if(x == 109){ simulado109(); }
+  if(x == 110){ simulado110(); }
+  if(x == 111){ simulado111(); }
+  if(x == 112){ simulado112(); }
+  if(x == 113){ simulado113(); }
+  if(x == 114){ simulado114(); }
+  if(x == 115){ simulado115(); }
+  if(x == 116){ simulado116(); }
+  if(x == 117){ simulado117(); }
+  if(x == 118){ simulado118(); }
+  if(x == 119){ simulado119(); }
+  if(x == 120){ simulado120(); }
+  if(x == 121){ simulado121(); }
+  if(x == 122){ simulado122(); }
+  if(x == 123){ simulado123(); }
+  if(x == 124){ simulado124(); }
+  if(x == 125){ simulado125(); }
+  if(x == 126){ simulado126(); }
+  if(x == 127){ simulado127(); }
 
-  if(x == 1){
-  simulado1();
-  }
-  if(x == 2){
-  simulado2();
-  }
-  if(x == 3){
-  simulado3();
-  }
-  if(x == 4){
-  simulado4();
-  }
-  if(x == 5){
-  simulado5();
-  }
-  if(x == 6){
-  simulado6();
-  }
-  if(x == 7){
-  simulado7();
-  }
-  if(x == 8){
-  simulado8();
-  }
-  if(x == 9){
-  simulado9();
-  }
-  if(x == 10){
-  simulado10();
-  }
-  if(x == 11){
-  simulado11();
-  }
-  if(x == 12){
-  simulado12();
-  }
-  if(x == 13){
-  simulado13();
-  }
-  if(x >= 14){
-  carrega();
-  }
+  if(x == 128){ simulado128(); }
+  if(x == 129){ simulado129(); }
+  if(x == 130){ simulado130(); }
+  if(x == 131){ simulado131(); }
+  if(x == 132){ simulado132(); }
+  if(x == 133){ simulado133(); }
+  if(x == 134){ simulado134(); }
+  if(x == 135){ simulado135(); }
+  if(x == 136){ simulado136(); }
+  if(x == 137){ simulado137(); }
+  if(x == 138){ simulado138(); }
+  if(x == 139){ simulado139(); }
+  if(x == 140){ simulado140(); }
+  if(x == 141){ simulado141(); }
+  if(x == 142){ simulado142(); }
+  if(x == 143){ simulado143(); }
+  if(x == 144){ simulado144(); }
+  if(x == 145){ simulado145(); }
+  if(x == 146){ simulado146(); }
+  if(x == 147){ simulado147(); }
+  if(x == 148){ simulado148(); }
+  if(x == 149){ simulado149(); }
+  if(x == 150){ simulado150(); }
+  if(x == 151){ simulado151(); }
+  if(x == 152){ simulado152(); }
+  if(x == 153){ simulado153(); }
+  if(x == 154){ simulado154(); }
+  if(x == 155){ simulado155(); }
+  if(x == 156){ simulado156(); }
+  if(x == 157){ simulado157(); }
+  if(x == 158){ simulado158(); }
+  if(x == 159){ simulado159(); }
+  if(x == 160){ simulado160(); }
+  if(x == 161){ simulado161(); }
+
+  if(x > 161){ carrega(); }
 }
 
 
@@ -314,28 +278,28 @@ var check4 = document.getElementById('alternativa4').checked;
 function simulado1(){
 
   if(check1 == false || check2 == false || check3 == false || check4 == false){
-  	document.getElementById('pergunta').innerHTML = "Qual era a capital da Alemanha durante a Segunda Guerra Mundial?";
+    document.getElementById('pergunta').innerHTML = "Qual era a capital da Alemanha durante a Segunda Guerra Mundial?";
 
-  	document.getElementById('label-botao1').innerHTML = 'Hamburgo';
+    document.getElementById('label-botao1').innerHTML = 'Hamburgo';
     document.getElementById('label-botao2').innerHTML = 'Munique';
     document.getElementById('label-botao3').innerHTML = 'Estocombo';
     document.getElementById('label-botao4').innerHTML = 'Berlim';
   }
 
-  	respostacerta = document.getElementById('label-botao4').innerHTML;
+    respostacerta = document.getElementById('label-botao4').innerHTML;
 
-	if(check1 == true){
-  erro();		
-	}
-	if(check2 == true){
-	erro();	
-	}
-	if(check3 == true){
-	erro();		
-	}
-	if(check4 == true){
+  if(check1 == true){
+  erro();   
+  }
+  if(check2 == true){
+  erro(); 
+  }
+  if(check3 == true){
+  erro();   
+  }
+  if(check4 == true){
   acerto();
-	}
+  }
 
 }
 
@@ -677,6 +641,4083 @@ erro();
 } 
 } 
 
+
+function simulado14(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que país aconteceu a batalha de Hastings, em​ 1066?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Rússia'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha'; 
+document.getElementById('label-botao3').innerHTML = 'Inglaterra'; 
+document.getElementById('label-botao4').innerHTML = 'França'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+}  
+
+function simulado15(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que foi o iluminismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Movimento artístico do século XX'; 
+document.getElementById('label-botao2').innerHTML = 'Uma revolução de ideias, após a Renascença, no final da Idade Média. São as ideias que trazem a luz após as trevas.'; 
+document.getElementById('label-botao3').innerHTML = 'Uma revolução da ciência em geral.'; 
+document.getElementById('label-botao4').innerHTML = 'Um evento no qual os bispos da igreja católica renunciaram seus cargos e deu início à outra era da história ocidental.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado16(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais os principais filósofos do iluminismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sócrates, Platão e Aristóteles.'; 
+document.getElementById('label-botao2').innerHTML = 'Bacon, Kant, Nietzsche e Goethe.'; 
+document.getElementById('label-botao3').innerHTML = 'Voltaire, Rousseau, Montesquieu, Hobbes e Locke.'; 
+document.getElementById('label-botao4').innerHTML = 'Foucault, Sartre e Beauvoir.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+}
+
+function simulado17(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual importante evento da história as ideias iluministas influenciaram?"; 
+
+document.getElementById('label-botao1').innerHTML = 'A Segunda Guerra Mundial.'; 
+document.getElementById('label-botao2').innerHTML = 'A Revolução Russa.'; 
+document.getElementById('label-botao3').innerHTML = 'A Primeira Guerra Mundial.'; 
+document.getElementById('label-botao4').innerHTML = 'A Revolução Francesa.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+ 
+
+function simulado18(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual jovem país da época adotou as ideias Iluministas em sua constituição, fazendo com que elas tivesse base nas leis do país?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Os Estados Unidos.'; 
+document.getElementById('label-botao2').innerHTML = 'A Austrália.'; 
+document.getElementById('label-botao3').innerHTML = 'A Argentina.'; 
+document.getElementById('label-botao4').innerHTML = 'O México.'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado19(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi a cidade erguida pelos persas que permanecia inabitada a maior parte do ano?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Cuzco'; 
+document.getElementById('label-botao2').innerHTML = 'Hierosólima'; 
+document.getElementById('label-botao3').innerHTML = 'Persépolis'; 
+document.getElementById('label-botao4').innerHTML = ' Constantinopla'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado20(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual desses nomes não representa um grande conquistador da história da humanidade?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Júlio César'; 
+document.getElementById('label-botao2').innerHTML = 'Alexandre Magno'; 
+document.getElementById('label-botao3').innerHTML = 'Gengis Khan'; 
+document.getElementById('label-botao4').innerHTML = 'Carlos Martel'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado21(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual Rei foi considerado o primeiro conquistador da História?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Hamurabi'; 
+document.getElementById('label-botao2').innerHTML = 'Sargão I'; 
+document.getElementById('label-botao3').innerHTML = 'Quatzacoatl'; 
+document.getElementById('label-botao4').innerHTML = 'Nabucodonosor'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado22(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o primeiro Imperador Chinês?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Qin Shuang'; 
+document.getElementById('label-botao2').innerHTML = ' Lao-Tsé'; 
+document.getElementById('label-botao3').innerHTML = 'Ping Pong'; 
+document.getElementById('label-botao4').innerHTML = 'Mao Tsé-Tung'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado23(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem deu início a Companhia de Jesus?"; 
+
+document.getElementById('label-botao1').innerHTML = 'São Marcos'; 
+document.getElementById('label-botao2').innerHTML = 'São Mateus'; 
+document.getElementById('label-botao3').innerHTML = 'Ignácio de Layola'; 
+document.getElementById('label-botao4').innerHTML = 'São Pedro'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado24(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem é considerado o pai da História?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Heródoto'; 
+document.getElementById('label-botao2').innerHTML = ' Hesíodo'; 
+document.getElementById('label-botao3').innerHTML = 'Homero'; 
+document.getElementById('label-botao4').innerHTML = 'Ovídio'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado25(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual é o maior 'cemitério' do mundo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Taj Mahal'; 
+document.getElementById('label-botao2').innerHTML = 'Pirâmides de Gizé'; 
+document.getElementById('label-botao3').innerHTML = 'Aquedutos Romanos'; 
+document.getElementById('label-botao4').innerHTML = 'Muralha da China'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado26(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Como eram chamadas as províncias do império Persa?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Colônias'; 
+document.getElementById('label-botao2').innerHTML = 'Satrápias'; 
+document.getElementById('label-botao3').innerHTML = ' Pérsidas'; 
+document.getElementById('label-botao4').innerHTML = 'Capitanias'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado27(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Como eram chamados os reis indianos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Marajás'; 
+document.getElementById('label-botao2').innerHTML = 'Kalifas'; 
+document.getElementById('label-botao3').innerHTML = 'Sultões'; 
+document.getElementById('label-botao4').innerHTML = 'Hindus'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado28(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que eram os Estados Pontifícios?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Estados concedidos à Igreja'; 
+document.getElementById('label-botao2').innerHTML = 'Eram as províncias babilônicas na Pérsia'; 
+document.getElementById('label-botao3').innerHTML = 'Complexo de templos em Israel'; 
+document.getElementById('label-botao4').innerHTML = 'Todas as alternativas estao corretas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado29(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Onde morava Abraão antes de se converter ao Judaísmo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Assíria'; 
+document.getElementById('label-botao2').innerHTML = 'Pérsia'; 
+document.getElementById('label-botao3').innerHTML = ' Babilônia'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado30(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem é conhecido como o pai da filosofia moderna?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Descartes'; 
+document.getElementById('label-botao2').innerHTML = 'Rousseaul'; 
+document.getElementById('label-botao3').innerHTML = 'Marx'; 
+document.getElementById('label-botao4').innerHTML = ' Sócrates'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado31(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual dessas não é uma civilização pré-colombiana"; 
+
+document.getElementById('label-botao1').innerHTML = 'Asteca'; 
+document.getElementById('label-botao2').innerHTML = 'Harappa'; 
+document.getElementById('label-botao3').innerHTML = ' Tolteca'; 
+document.getElementById('label-botao4').innerHTML = 'Tupi-Guarani'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado32(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Para que fim foi criada a pólvora?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Festas'; 
+document.getElementById('label-botao2').innerHTML = ' Iluminação'; 
+document.getElementById('label-botao3').innerHTML = 'Caça'; 
+document.getElementById('label-botao4').innerHTML = ' Guerra'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado33(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Como a civilização maia desapareceu em massa?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Colonização espanhola'; 
+document.getElementById('label-botao2').innerHTML = 'Epidemias'; 
+document.getElementById('label-botao3').innerHTML = ' Abdução alinígena'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhum das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado34(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual dessas não é uma civilização americana que teve seu esplendor na Idade Antiga?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Olmeca'; 
+document.getElementById('label-botao2').innerHTML = 'Asteca'; 
+document.getElementById('label-botao3').innerHTML = 'Maia'; 
+document.getElementById('label-botao4').innerHTML = ' Tolteca'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado35(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual desses livros não pertence ao Torá?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Juízes'; 
+document.getElementById('label-botao2').innerHTML = 'Deuteronômio'; 
+document.getElementById('label-botao3').innerHTML = 'Êxodo'; 
+document.getElementById('label-botao4').innerHTML = 'Levítico'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado36(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Os números que utilizamos hoje em dia foram criados por qual civilização?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Egípcia'; 
+document.getElementById('label-botao2').innerHTML = 'Asteca'; 
+document.getElementById('label-botao3').innerHTML = 'Inca'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado37(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O Movimento reformista teve mais força em quais países?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Alemanha, Suíça e Inglaterra'; 
+document.getElementById('label-botao2').innerHTML = ' Itália, Alemanha e Brasil'; 
+document.getElementById('label-botao3').innerHTML = ' Brasil, Inglaterra e Suíça'; 
+document.getElementById('label-botao4').innerHTML = 'Inglaterra, Estados Unidos e França'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado38(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que aconteceu a Reforma Protestante?"; 
+
+document.getElementById('label-botao1').innerHTML = 'O nascimento de Martinho Lutero que começou a reforma'; 
+document.getElementById('label-botao2').innerHTML = 'As novas religiões'; 
+document.getElementById('label-botao3').innerHTML = 'Venda de indulgências da igreja católica'; 
+document.getElementById('label-botao4').innerHTML = 'A invenção da imprensa'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado39(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais são as religiões protestantes mais conhecidas?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Católicos, Evangélicos, Luteranismo e Anabatistas'; 
+document.getElementById('label-botao2').innerHTML = ' Anabatistas, Luteranismo, Calvinismo e Anglicanismo'; 
+document.getElementById('label-botao3').innerHTML = 'Calvinismo, Luteranismo, Católicos e Budistas'; 
+document.getElementById('label-botao4').innerHTML = 'Budistas, Espiritas, Luteranismo e Calvinismo'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado40(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A contra-reforma foi impulsionada por três ordens. Quais são elas?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Concílio de trento, Ordem dos jesuítas e Index'; 
+document.getElementById('label-botao2').innerHTML = 'Concílio de trento, Ordem dos papas e Index'; 
+document.getElementById('label-botao3').innerHTML = 'Ordem dos Jesuítas, Concílio de Trento e Inquisição'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado41(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era a divisão dos poderes do Estado, segundo Charles de Montesquieu?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Poder direto do presidente - em uma Democracia, no caso - com o povo.'; 
+document.getElementById('label-botao2').innerHTML = 'Poder executivo, legislativo e judiciário.'; 
+document.getElementById('label-botao3').innerHTML = 'Poder centralizado.'; 
+document.getElementById('label-botao4').innerHTML = 'Poder absolutista.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+}
+function simulado42(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome do Partido Nacional Socialista dos Trabalhadores Alemães, no idioma Alemão?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Deutsche National sozialistische Arbeiterparte'; 
+document.getElementById('label-botao2').innerHTML = 'Deutsche Nationalsozialistische Arbeiterparte'; 
+document.getElementById('label-botao3').innerHTML = 'National Deutsche Arbeiterparte'; 
+document.getElementById('label-botao4').innerHTML = 'Nationalsozialistische Deutsche Arbeiterparte'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado43(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual organização do exército de Hitler foi a mais famosa?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Sturmabteilung'; 
+document.getElementById('label-botao2').innerHTML = 'Schutzstaffel'; 
+document.getElementById('label-botao3').innerHTML = 'Stabswache'; 
+document.getElementById('label-botao4').innerHTML = ' Einsatzgruppen'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado44(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem inventou a estratégia do Blitzkrieg (guerra relâmpago) na segunda guerra mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Hermann Wilhelm'; 
+document.getElementById('label-botao2').innerHTML = 'Norman Schwarzkopf'; 
+document.getElementById('label-botao3').innerHTML = 'Heinz Guderian'; 
+document.getElementById('label-botao4').innerHTML = 'Erich von Manstein'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado45(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano foi contruído o campo de concentração de Dachau?"; 
+
+document.getElementById('label-botao1').innerHTML = '1931'; 
+document.getElementById('label-botao2').innerHTML = '1913'; 
+document.getElementById('label-botao3').innerHTML = '1933'; 
+document.getElementById('label-botao4').innerHTML = '1943'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado46(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual das alternativas contém elementos cultuados pelos bárbaros?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Destacam-se os elementos da natureza, animais e seres mitológicos, além de alguns objetos os quais acreditavam possuir algum tipo de poder. Entre as divindades, a mais importante era Odin, deus da guerra'; 
+document.getElementById('label-botao2').innerHTML = 'Não chegaram a um conceito claro da divindade, menos ainda a cultuar publicamente um deus único, mas certamente tenderam a um monoteísmo implícito na figura de um Ser Superior.'; 
+document.getElementById('label-botao3').innerHTML = 'Cultuavam os Manes (espirítos dos mortos) com oferendas de vinho, de mel ou de leite e celebravam em seu louvor as festas chamadas Rosaria e as Parentalias'; 
+document.getElementById('label-botao4').innerHTML = 'Todas as alternativas estão corretas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado47(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que os bárbaros aprenderam com os romanos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'O conceito de monarquia, diplomacia e propriedade privada e aristocracia.'; 
+document.getElementById('label-botao2').innerHTML = 'O conceito de monarquia, mitologia grega, teatro e posteriormente passaram a entender as estratégias de guerra romanas.'; 
+document.getElementById('label-botao3').innerHTML = 'O conceito de aristocracia, diplomacia e propriedade privada, e também pintura e arquitetura.'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado48(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A ideologia marxista é fundamentada por quais pensadores?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Adam Smith e John Locke'; 
+document.getElementById('label-botao2').innerHTML = 'Karl Marx e Friedrich Engels'; 
+document.getElementById('label-botao3').innerHTML = 'Karl Marx'; 
+document.getElementById('label-botao4').innerHTML = 'Montesquieu'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado49(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O Capital é uma obra de:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Economia Feudal'; 
+document.getElementById('label-botao2').innerHTML = ' Economia Politica'; 
+document.getElementById('label-botao3').innerHTML = ' Liberalismo Economico'; 
+document.getElementById('label-botao4').innerHTML = ' Empreendedorismo'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado50(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que os regimes comunistas atuais são ilegitimos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Porque a politica econômica é baseada na propriedade pública e no Estado Máximo'; 
+document.getElementById('label-botao2').innerHTML = 'Os governos atuais não são comunistas pois estão baseados numa politica econômica feudal'; 
+document.getElementById('label-botao3').innerHTML = ' Porque o verdadeiro Comunismo é de direita'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado51(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que é a mais-valia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'É o lucro que o Burguês tira da produção em excesso feita pelo operário'; 
+document.getElementById('label-botao2').innerHTML = 'É o dinheiro do capitalista'; 
+document.getElementById('label-botao3').innerHTML = 'É a diferença de salários entre o Burguês e o Proletário'; 
+document.getElementById('label-botao4').innerHTML = 'Todas as alternativas estão corretas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado52(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Para fazer o giro do capital são necessários três requisitos básicos, estes são:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Matéria Prima - Meios de Produção - Força de Trabalho'; 
+document.getElementById('label-botao2').innerHTML = 'Meios de Produção - Energia - Proletáriado'; 
+document.getElementById('label-botao3').innerHTML = 'Matéria Prima - O uso da Mais Valia - Mercado Consumidor'; 
+document.getElementById('label-botao4').innerHTML = ' O Liberalismo Econômico - Matéria Prima - Força de Trabalho'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado53(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual a classe que, segundo Marx, é a privilegiada dentro do sistema econômico do capitalismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Classe média'; 
+document.getElementById('label-botao2').innerHTML = 'Proletariado'; 
+document.getElementById('label-botao3').innerHTML = 'Burguesia'; 
+document.getElementById('label-botao4').innerHTML = 'Camponeses'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado54(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Karl Marx nasceu em qual país?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Rússia'; 
+document.getElementById('label-botao2').innerHTML = 'Inglaterra'; 
+document.getElementById('label-botao3').innerHTML = 'Itália'; 
+document.getElementById('label-botao4').innerHTML = 'Alemanha'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado55(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o estopim da Primeira Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Assassinato do arquiduque Francisco Ferdinando'; 
+document.getElementById('label-botao2').innerHTML = 'Revanchismo francês'; 
+document.getElementById('label-botao3').innerHTML = 'Questão balcânica'; 
+document.getElementById('label-botao4').innerHTML = 'Disputas comerciais entre Alemanha e Reino Unido'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado56(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais países faziam parte da tríplice aliança?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Alemanha, Rússia e Império Austro-Húngaro'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha, Itália e Japão'; 
+document.getElementById('label-botao3').innerHTML = 'União Soviética, França e Reino Unido'; 
+document.getElementById('label-botao4').innerHTML = 'Alemanha, Império Austro-Húngaro e Itália'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado57(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano o Japão atacou Pearl Harbor?"; 
+
+document.getElementById('label-botao1').innerHTML = '1940'; 
+document.getElementById('label-botao2').innerHTML = '1941'; 
+document.getElementById('label-botao3').innerHTML = '1942'; 
+document.getElementById('label-botao4').innerHTML = '1943'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado58(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome do pacto feito entre a Alemanha e a União Soviética?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Germano-Soviético'; 
+document.getElementById('label-botao2').innerHTML = 'Tortesilhas'; 
+document.getElementById('label-botao3').innerHTML = 'Madrid'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado59(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais os países formaram o Eixo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Alemanha, Itália e Japão'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha, Itália e Áustria'; 
+document.getElementById('label-botao3').innerHTML = 'União Soviética, França e Reino Unido'; 
+document.getElementById('label-botao4').innerHTML = 'Itália, França e Reino Unido'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado60(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome do tratado feito após a I Guerra Mundial que deu início a II Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Tratado de Madri'; 
+document.getElementById('label-botao2').innerHTML = 'Tradado de Tordesilhas'; 
+document.getElementById('label-botao3').innerHTML = 'Tratado de Versalhes'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado61(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual país atacou duas cidades japonesas com a bomba atômica?"; 
+
+document.getElementById('label-botao1').innerHTML = 'União Soviética'; 
+document.getElementById('label-botao2').innerHTML = 'Alemanha'; 
+document.getElementById('label-botao3').innerHTML = 'Russia'; 
+document.getElementById('label-botao4').innerHTML = 'Estados Unidos'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado62(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano se deu início à Primeira Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = '1910'; 
+document.getElementById('label-botao2').innerHTML = '1913'; 
+document.getElementById('label-botao3').innerHTML = '1914'; 
+document.getElementById('label-botao4').innerHTML = '1917'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado63(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual país é invadido pela Alemanha em 1939, dando assim, início à II Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Argélia'; 
+document.getElementById('label-botao2').innerHTML = 'Polônia'; 
+document.getElementById('label-botao3').innerHTML = 'Brasil'; 
+document.getElementById('label-botao4').innerHTML = 'União Soviética'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado64(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual região chinesa foi invadida pelo Japão na II Guera Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Fujian'; 
+document.getElementById('label-botao2').innerHTML = 'Yunnan'; 
+document.getElementById('label-botao3').innerHTML = 'Hainan'; 
+document.getElementById('label-botao4').innerHTML = 'Manchúria'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado65(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o presidente americano durante a Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Barack Obama'; 
+document.getElementById('label-botao2').innerHTML = 'Theodore Roosevelt'; 
+document.getElementById('label-botao3').innerHTML = 'Franklin Roosevelt'; 
+document.getElementById('label-botao4').innerHTML = 'Kennedy'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado66(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o primeiro-ministro inglês quando a guerra iniciou-se?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Neville Chamberlain'; 
+document.getElementById('label-botao2').innerHTML = 'Bernard Montgomery'; 
+document.getElementById('label-botao3').innerHTML = 'Winston Churchill'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado67(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que Adolf Hitler era na Primeira Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sargento'; 
+document.getElementById('label-botao2').innerHTML = 'Cabo'; 
+document.getElementById('label-botao3').innerHTML = 'General'; 
+document.getElementById('label-botao4').innerHTML = 'Presidente'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado68(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Na Primeira Guerra Mundial, quem foi o primeiro país a declarar guerra a Iugoslávia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Estados Unidos'; 
+document.getElementById('label-botao2').innerHTML = 'França'; 
+document.getElementById('label-botao3').innerHTML = 'Império Austro-Húngaro'; 
+document.getElementById('label-botao4').innerHTML = 'Alemanha'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado69(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O Japão na Primeira Guerra Mundial estava em qual lado?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Aliados'; 
+document.getElementById('label-botao2').innerHTML = 'Eixo'; 
+document.getElementById('label-botao3').innerHTML = 'Centro'; 
+document.getElementById('label-botao4').innerHTML = 'Neutro'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado70(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o ditador soviético durante a Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Gueorgui Malenkov'; 
+document.getElementById('label-botao2').innerHTML = 'Vladmir Puting'; 
+document.getElementById('label-botao3').innerHTML = 'Lenin'; 
+document.getElementById('label-botao4').innerHTML = 'Josseph Stalin'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado71(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o primeiro país anexado por Hitler, na Segunda Guerra Mundial?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Tchecoslováquia'; 
+document.getElementById('label-botao2').innerHTML = 'Polônia'; 
+document.getElementById('label-botao3').innerHTML = 'Áustria'; 
+document.getElementById('label-botao4').innerHTML = 'União Soviética'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+ function simulado72(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o líder da França Livre nomeado por Churchill?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Vichy'; 
+document.getElementById('label-botao2').innerHTML = 'Debussy'; 
+document.getElementById('label-botao3').innerHTML = 'Miterrand'; 
+document.getElementById('label-botao4').innerHTML = 'Charles de Gaulle'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado73(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era o primeiro nome de Mussolini"; 
+
+document.getElementById('label-botao1').innerHTML = ' Benito'; 
+document.getElementById('label-botao2').innerHTML = 'Andrea'; 
+document.getElementById('label-botao3').innerHTML = 'Ricardo'; 
+document.getElementById('label-botao4').innerHTML = 'Roberto'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado74(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Era Vargas é o período da história nacional em que o Brasil foi governado por Getúlio Vargas. A alternativa que corresponde corretamente à data do período citado é:"; 
+
+document.getElementById('label-botao1').innerHTML = '1930-1954'; 
+document.getElementById('label-botao2').innerHTML = '1930-1940'; 
+document.getElementById('label-botao3').innerHTML = '1930-1945'; 
+document.getElementById('label-botao4').innerHTML = '1930-1964'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado75(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Vargas chegou ao poder por meio de diversas conspirações, após sua derrota nas Eleições de 1930 para o candidato:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Jango'; 
+document.getElementById('label-botao2').innerHTML = 'Carlos Lacerda'; 
+document.getElementById('label-botao3').innerHTML = ' Luís Carlos Prestes'; 
+document.getElementById('label-botao4').innerHTML = 'Júlio Prestes'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado76(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A tomada do poder por Vargas e o consequente fim da República Oligárquica é geralmente denominada:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Varguismo'; 
+document.getElementById('label-botao2').innerHTML = 'Revolução Constitucionalista'; 
+document.getElementById('label-botao3').innerHTML = 'Golpe do Estado Novo'; 
+document.getElementById('label-botao4').innerHTML = ' Revolução de 30'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado77(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Consolidação das Leis Trabalhistas foi um marco da Era Vargas que ocorreu durante:"; 
+
+document.getElementById('label-botao1').innerHTML = 'O Governo Constitucional'; 
+document.getElementById('label-botao2').innerHTML = 'O Estado Novo'; 
+document.getElementById('label-botao3').innerHTML = 'O Governo do Novo'; 
+document.getElementById('label-botao4').innerHTML = 'O Governo Provisório'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado78(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A alternativa que melhor descreve o fim da Era Vargas é:"; 
+
+document.getElementById('label-botao1').innerHTML = 'A contradição existente entre o combate às ditaduras fascistas europeias e a vivência de um regime semelhante em território nacional.'; 
+document.getElementById('label-botao2').innerHTML = 'A desconfiança de Carlos Lacerda, e o contexto polarizado do século XX, obrigam Getúlio a renunciar a favor de Dultra.'; 
+document.getElementById('label-botao3').innerHTML = 'Diante das pressões exercidas por setores da sociedade civil e militar, Getúlio suicida-se.'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado79(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome do deus do vinho na mitologia greg"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ares'; 
+document.getElementById('label-botao2').innerHTML = 'Zeus'; 
+document.getElementById('label-botao3').innerHTML = 'Dionísio'; 
+document.getElementById('label-botao4').innerHTML = 'Hércules'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado80(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Segundo a mitologia grega, o que a deusa Ártemis era de Apolo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Prima'; 
+document.getElementById('label-botao2').innerHTML = 'Tia'; 
+document.getElementById('label-botao3').innerHTML = 'Irmã'; 
+document.getElementById('label-botao4').innerHTML = 'Sobrinha'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado81(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome dado pelos romanos, a deusa grega Afrodite?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Vênus'; 
+document.getElementById('label-botao2').innerHTML = 'Íris'; 
+document.getElementById('label-botao3').innerHTML = 'Pandora'; 
+document.getElementById('label-botao4').innerHTML = 'Deméter'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado82(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais dos deuses abaixo não fazem parte da mitologia grega?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Ares e Hermes'; 
+document.getElementById('label-botao2').innerHTML = 'Afrodite e Hefesto'; 
+document.getElementById('label-botao3').innerHTML = 'Thor e Hórus'; 
+document.getElementById('label-botao4').innerHTML = 'Atena e Apolo'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado83(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome da musa que apaixonou-se por Narciso?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Eco'; 
+document.getElementById('label-botao2').innerHTML = 'Flora'; 
+document.getElementById('label-botao3').innerHTML = 'Medusa'; 
+document.getElementById('label-botao4').innerHTML = ' Fauna'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado83(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Onde viviam os deuses gregos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Arcádia'; 
+document.getElementById('label-botao2').innerHTML = ' Atlântida'; 
+document.getElementById('label-botao3').innerHTML = 'Campos Elísios'; 
+document.getElementById('label-botao4').innerHTML = 'Olimpo'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado84(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o rei que recebeu orelhas de burro, como castigo de um deus?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Pompeu'; 
+document.getElementById('label-botao2').innerHTML = 'Midas'; 
+document.getElementById('label-botao3').innerHTML = 'Magno'; 
+document.getElementById('label-botao4').innerHTML = ' Adônis'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado85(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Conforme o mito grego, quem era, respectivamente, a deusa da caça, a deusa do amor, e a deusa da sabedoria?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Diana, Era, Juno'; 
+document.getElementById('label-botao2').innerHTML = 'Íris, Pandora, Juno'; 
+document.getElementById('label-botao3').innerHTML = 'Ártemis, Afrodite, Atena'; 
+document.getElementById('label-botao4').innerHTML = 'Era, Minerva, Ceres'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado86(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome do deus grego da guerra?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ares'; 
+document.getElementById('label-botao2').innerHTML = 'Quírion'; 
+document.getElementById('label-botao3').innerHTML = 'Zeus'; 
+document.getElementById('label-botao4').innerHTML = 'Poseidon'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado86(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual a espécie da planta cujas folhas foram usadas como coroa por Apolo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Azaléia'; 
+document.getElementById('label-botao2').innerHTML = 'Oliveira'; 
+document.getElementById('label-botao3').innerHTML = 'Louro'; 
+document.getElementById('label-botao4').innerHTML = 'Hera'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado87(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano iniciou-se a Revolução Francesa?"; 
+
+document.getElementById('label-botao1').innerHTML = ' 1800'; 
+document.getElementById('label-botao2').innerHTML = '1769'; 
+document.getElementById('label-botao3').innerHTML = '1799'; 
+document.getElementById('label-botao4').innerHTML = '1789'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado88(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o evento que marcou o início da Revolução Francesa?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Napoleão Bonaparte assumir a França'; 
+document.getElementById('label-botao2').innerHTML = 'A Revolta dos Sans-Culottes'; 
+document.getElementById('label-botao3').innerHTML = 'A invenção da Guilhotina'; 
+document.getElementById('label-botao4').innerHTML = 'A Queda da Bastilha'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado89(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual desses três são os principais protagonistas da Revolução Francesa?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Napoleão Bonaparte, Rousseau e Voltaire'; 
+document.getElementById('label-botao2').innerHTML = 'Montesquieu, Napoleão Bonaparte e Hobbes'; 
+document.getElementById('label-botao3').innerHTML = 'Luís XIV, Maria Antonieta e Robespierre'; 
+document.getElementById('label-botao4').innerHTML = 'Robespierre, Marat e Danton'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado90(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que o rei Luís XIV era também conhecido como 'Rei Sol'?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Porque ele que ajudou os cientistas da época a desenvolverem pesquisas sobre o Sol.'; 
+document.getElementById('label-botao2').innerHTML = 'Porque ele que quis receber esse título.'; 
+document.getElementById('label-botao3').innerHTML = 'Porque ele achava-se superior à todos e tudo e o "centro do Universo".'; 
+document.getElementById('label-botao4').innerHTML = 'Porque ele tinha como Deus o Sol.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado91(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem foi a jovem girondina que matou Marat?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Charlotte Corday.'; 
+document.getElementById('label-botao2').innerHTML = 'Maria Antonieta.'; 
+document.getElementById('label-botao3').innerHTML = 'Marianne.'; 
+document.getElementById('label-botao4').innerHTML = 'A filha mais velha de Luís XVI e Maria Antonieta, Maria Teresa Carlota.'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado92(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era a doença que Luís XVI tinha que fez com que demorasse sete anos para que um herdeiro do trono fosse concedido à França?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ele tinha fimose.'; 
+document.getElementById('label-botao2').innerHTML = 'Ele era estéril.'; 
+document.getElementById('label-botao3').innerHTML = 'Era portador de AIDS'; 
+document.getElementById('label-botao4').innerHTML = 'Simplesmente, ele e Maria Antonieta era inférteis.'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado93(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o representante do Terceiro Estado?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Robespierre.'; 
+document.getElementById('label-botao2').innerHTML = 'Luís XVI.'; 
+document.getElementById('label-botao3').innerHTML = 'Jacques Necker.'; 
+document.getElementById('label-botao4').innerHTML = 'Marat.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado94(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais ideias filosóficas influenciaram a Revolução Francesa?"; 
+
+document.getElementById('label-botao1').innerHTML = ' O Iluminismo'; 
+document.getElementById('label-botao2').innerHTML = ' A filosofia cristã'; 
+document.getElementById('label-botao3').innerHTML = ' A filosofia Budista'; 
+document.getElementById('label-botao4').innerHTML = 'Niilistas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado95(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual eram os dois grupos político que haviam na França, naquela época?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Esquerdistas e direitistas.'; 
+document.getElementById('label-botao2').innerHTML = 'Comunistas e Girondinos.'; 
+document.getElementById('label-botao3').innerHTML = ' Capitalistas e anarquistas'; 
+document.getElementById('label-botao4').innerHTML = 'Jacobinos e Girondinos.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado96(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era o lema da Revolução Francesa?"; 
+
+document.getElementById('label-botao1').innerHTML = '"Paz, terra, pão, liberdade e trabalho".'; 
+document.getElementById('label-botao2').innerHTML = '"Liberdade, igualdade e fraternidade".'; 
+document.getElementById('label-botao3').innerHTML = '"O dever de todo revolucionário é fazer revolução".'; 
+document.getElementById('label-botao4').innerHTML = '"As ocasiões fazem as revoluções".'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado97(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que dia Maria Antonieta foi guilhotinada?"; 
+
+document.getElementById('label-botao1').innerHTML = '10 de outubro de 1793'; 
+document.getElementById('label-botao2').innerHTML = '15 de outubro de 1790.'; 
+document.getElementById('label-botao3').innerHTML = '16 de outubro de 1793.'; 
+document.getElementById('label-botao4').innerHTML = '14 de outubro de 1992.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado98(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Além de guilhotina, qual era o outro nome que a máquina de decepar era conhecida na França?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Lâmina mortal'; 
+document.getElementById('label-botao2').innerHTML = 'Máquina da morte'; 
+document.getElementById('label-botao3').innerHTML = 'Corta cabeças'; 
+document.getElementById('label-botao4').innerHTML = 'Navalha Nacional'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado99(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que dia Luís XVI fora guilhotinado?"; 
+
+document.getElementById('label-botao1').innerHTML = '21 de janeiro de 1793'; 
+document.getElementById('label-botao2').innerHTML = '22 de janeiro de 1790'; 
+document.getElementById('label-botao3').innerHTML = '15 de janeiro de 1793'; 
+document.getElementById('label-botao4').innerHTML = '24 de janeiro de 1795'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado100(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano a Revolução Francesa terminou e quem assumiu a França?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Seu término foi em 1798 e quem assumiu foi Maximilien Robespierre'; 
+document.getElementById('label-botao2').innerHTML = ' Seu término foi em 1795 e quem assumiu foi Jean-Paul Marat'; 
+document.getElementById('label-botao3').innerHTML = 'Seu término foi em 1799 e quem assumiu foi Napoleão Bonaparte'; 
+document.getElementById('label-botao4').innerHTML = 'Seu término foi em 1797 e quem assumiu foi Georges Jacques Danton'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado101(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Maximilien Robespierre foi um líder:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Girondino'; 
+document.getElementById('label-botao2').innerHTML = 'Jacobino'; 
+document.getElementById('label-botao3').innerHTML = 'Armendino'; 
+document.getElementById('label-botao4').innerHTML = 'Nenhuma das alternativas'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado102(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual significado do nome Baal?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Deus supremo'; 
+document.getElementById('label-botao2').innerHTML = 'Filho de zeus'; 
+document.getElementById('label-botao3').innerHTML = 'Senhor ou Lorde'; 
+document.getElementById('label-botao4').innerHTML = 'Filho da noite'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado103(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Que deus é Dagom?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Das galaxias'; 
+document.getElementById('label-botao2').innerHTML = 'Das tempestades'; 
+document.getElementById('label-botao3').innerHTML = 'Do rio tigre e Eufrates também pode representar a agricultura'; 
+document.getElementById('label-botao4').innerHTML = 'Do vinho e das festas'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado104(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Que deus foi sincretizado com Zeus?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Dagom'; 
+document.getElementById('label-botao2').innerHTML = 'Karet'; 
+document.getElementById('label-botao3').innerHTML = 'Enki'; 
+document.getElementById('label-botao4').innerHTML = 'Baal'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado105(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem ficou conhecida como esposa do diabo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ereshkigal'; 
+document.getElementById('label-botao2').innerHTML = 'Hera'; 
+document.getElementById('label-botao3').innerHTML = 'Tammuz'; 
+document.getElementById('label-botao4').innerHTML = 'Afrodite'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+function simulado106(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual é a definição de Iluminismo de acordo com o filósofo alemão Immanuel Kant?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Kant definiu o iluminismo como o uso da religião para explicar os fenômenos da natureza.'; 
+document.getElementById('label-botao2').innerHTML = 'Kant definiu o Iluminismo como um processo de “esclarecimento”, a partir do qual o ser humano sairia de sua “menoridade” graças ao uso da razão e ao exercício da liberdade de pensamento.'; 
+document.getElementById('label-botao3').innerHTML = 'O iluminismo nada mais é que um simples aglomerados de ideias oportunistas.'; 
+document.getElementById('label-botao4').innerHTML = 'Kant utilizou do iluminismo para desenvolver seus estudos sobre zoologia.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado107(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que foi o Iluminismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'O Iluminismo foi, portanto, um conjunto de ideias desenvolvida na Europa, sobretudo na França, que defendia o racionalismo como valor essencial da sociedade, daí a ideia de luz, em oposição ao que os iluministas consideravam trevas.'; 
+document.getElementById('label-botao2').innerHTML = 'Foi um amontoado de ideias sem explicação em que predominava o uso da razão.'; 
+document.getElementById('label-botao3').innerHTML = 'O Iluminismo foi um acontecimento histórico da Idade Média, que desenvolveu os conceitos sobre razão e racionalismo.'; 
+document.getElementById('label-botao4').innerHTML = 'Foi um conjunto de ideias desenvolvido na Ásia, sobretudo no Japão, que defendia o racionalismo como valor essencial da sociedade.'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado108(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem foram os dois principais filósofos responsáveis pela obra A Enciclopédia, publicada na França entre 1751 e 1772?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Daniel Fahrenheit e Anders Celsius.'; 
+document.getElementById('label-botao2').innerHTML = 'BDenis Diderot e René Descartes.'; 
+document.getElementById('label-botao3').innerHTML = 'D’Alembert e Denis Bacon.'; 
+document.getElementById('label-botao4').innerHTML = 'Denis Diderot e Jean D’Alembert.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado109(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em relação à Enciclopédia, qual filósofo escreveu sobre música e política?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Jean Jacques Rousseau'; 
+document.getElementById('label-botao2').innerHTML = 'Denis Diderot'; 
+document.getElementById('label-botao3').innerHTML = 'Francis Bacon'; 
+document.getElementById('label-botao4').innerHTML = 'Montesquieu'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado110(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Além de se chocar com a igreja, quais outros grupos os iluministas tiveram de enfrentar?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Absolutismo e Idade Média.'; 
+document.getElementById('label-botao2').innerHTML = 'Absolutismo e o Antigo Regime.'; 
+document.getElementById('label-botao3').innerHTML = 'Cristianismo e Antigo Regime.'; 
+document.getElementById('label-botao4').innerHTML = 'Absolutismo e Cristianismo.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado111(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Para Rousseau, qual foi o motivo pelo qual a natureza humana, que ele considerava boa, na essência, foi corrompendo-se?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Desenvolvimento da economia e industria, em que surgiu as condições de vida melhores.'; 
+document.getElementById('label-botao2').innerHTML = 'Foi o fortalecimento das industrias têxtil e industrias automobilísticas.'; 
+document.getElementById('label-botao3').innerHTML = 'Foi o desenvolvimento da economia e propriedade, em que surgiu as ambições, a competição, o individualismo.'; 
+document.getElementById('label-botao4').innerHTML = 'Trabalho mecanizado, juntamente com operações simples.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado112(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual pensador é considerado o pai do Iluminismo?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Voltaire'; 
+document.getElementById('label-botao2').innerHTML = 'Quesnay'; 
+document.getElementById('label-botao3').innerHTML = 'John Locke'; 
+document.getElementById('label-botao4').innerHTML = 'Montesquieu'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado113(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Assinale a alternativa incorreta. Durante o primeiro governo Vargas, o Brasil mudou bastante como:"; 
+
+document.getElementById('label-botao1').innerHTML = 'As cidades cresceram'; 
+document.getElementById('label-botao2').innerHTML = 'A agricultura avançou'; 
+document.getElementById('label-botao3').innerHTML = 'O Estado se fortaleceu'; 
+document.getElementById('label-botao4').innerHTML = 'Interveio na economia'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado114(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Grupos que se formaram no contexto da grande depressão no Brasil:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Fascistas e Nazistas'; 
+document.getElementById('label-botao2').innerHTML = 'Salazaristas e Franquistas'; 
+document.getElementById('label-botao3').innerHTML = 'Franquistas e Nazistas'; 
+document.getElementById('label-botao4').innerHTML = 'Integralistas e Aliancistas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado115(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O plano Cohen foi implantado no governo Vargas no início do período do(a):"; 
+
+document.getElementById('label-botao1').innerHTML = 'Estado Novo'; 
+document.getElementById('label-botao2').innerHTML = 'Eleição indireta'; 
+document.getElementById('label-botao3').innerHTML = 'Governo provisório'; 
+document.getElementById('label-botao4').innerHTML = 'Queremismo'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado116(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Uma das importantes criações no Brasil do estado novo foi o Conselho nacional do petróleo em:"; 
+
+document.getElementById('label-botao1').innerHTML = '1938'; 
+document.getElementById('label-botao2').innerHTML = '1940'; 
+document.getElementById('label-botao3').innerHTML = '1941'; 
+document.getElementById('label-botao4').innerHTML = '1949'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado117(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em 1939 um órgão foi criado pelo estado novo inspirado nos movimentos nazifascistas em relação á propaganda.O órgão era:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Csn'; 
+document.getElementById('label-botao2').innerHTML = 'Dip'; 
+document.getElementById('label-botao3').innerHTML = 'Gp'; 
+document.getElementById('label-botao4').innerHTML = 'Clt'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado118(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano o estado novo chegou ao fim junto ao governo Vargas?"; 
+
+document.getElementById('label-botao1').innerHTML = '1941'; 
+document.getElementById('label-botao2').innerHTML = '1943'; 
+document.getElementById('label-botao3').innerHTML = '1944'; 
+document.getElementById('label-botao4').innerHTML = '1945'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado119(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual das alternativas abaixo apresenta a definição correta para o fascismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sistema político e econômico que prevaleceu em toda Europa no começo do século XX, cuja principal característica era a defesa dos direitos sociais.'; 
+document.getElementById('label-botao2').innerHTML = 'Sistema político, econômico e social que ganhou força na Europa entre as décadas de 1920 e 1940, cujas principais características eram: nacionalismo, totalitarismo e militarismo.'; 
+document.getElementById('label-botao3').innerHTML = 'Sistema político que prevaleceu na Itália e Portugal no começo do século XX, cuja principal característica era a defesa do fim do capitalismo.'; 
+document.getElementById('label-botao4').innerHTML = ' Sistema político que vigorou na Itália e Alemanha no final do século XIX,, cuja principal características era a valorização da democracia.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado120(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais das alternativas abaixo apresenta o nome de dois importantes líderes fascistas e os países que governaram?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Winston Churchill na Inglaterra e Roosevelt nos Estados Unidos.'; 
+document.getElementById('label-botao2').innerHTML = 'Stalin na União Soviética e Gandhi na Índia.'; 
+document.getElementById('label-botao3').innerHTML = 'Montgomery na Inglaterra e Eisenhower nos Estados Unidos.'; 
+document.getElementById('label-botao4').innerHTML = 'Adolf Hitler na Alemanha e Benito Mussolini na Itália.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado121(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual das alternativas abaixo apresenta as principais características do fascismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Defesa das minorias étnicas, valorização do comunismo, política baseada na participação popular.'; 
+document.getElementById('label-botao2').innerHTML = 'Totalitarismo, Militarismo, Nacionalismo, culto à força física, anti-socialismo, censura e repressão aos movimentos de oposição.'; 
+document.getElementById('label-botao3').innerHTML = 'Valorização da democracia, defesa dos direitos humanos, pacifismo e liberdade de imprensa.'; 
+document.getElementById('label-botao4').innerHTML = 'Valorização do anarquismo, política econômica baseada na justiça social, baixos investimentos no setor militar.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado122(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era o objetivo dos governos fascistas ao usar a censura?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Garantir que a verdade chegasse ao povo sem distorções.'; 
+document.getElementById('label-botao2').innerHTML = 'Mostrar para o povo que o governo era favorável à liberdade de expressão.'; 
+document.getElementById('label-botao3').innerHTML = 'Conquistar o apoio dos meios de comunicação da época (rádio, jornais e revistas).'; 
+document.getElementById('label-botao4').innerHTML = 'Coibir qualquer tipo de crítica aos seus governos, facilitando assim a manipulação da opinião pública.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado123(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O período entre as duas guerras mundiais (1919 – 1939) foi marcado por:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sucesso do capitalismo, do liberalismo e da democracia e coexistência fraterna entre fascismo e comunismo;'; 
+document.getElementById('label-botao2').innerHTML = 'Estagnação das economias socialistas e capitalistas e aliança entre os EUA e a URSS para deter o avanço fascista da Europa;'; 
+document.getElementById('label-botao3').innerHTML = 'Crise do capitalismo, do liberalismo e da democracia e polarização ideológica entre fascismo e comunismo;'; 
+document.getElementById('label-botao4').innerHTML = 'Prosperidade das economias capitalistas e socialistas e aparecimento da Guerra fria entre os EUA e a URSS;'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado124(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A ascensão de Hitler ao poder, no início dos anos trinta, ocorreu:"; 
+
+document.getElementById('label-botao1').innerHTML = 'A partir de sua convocação pelo presidente Hindenburg para chefiar uma coalizão governamental;'; 
+document.getElementById('label-botao2').innerHTML = 'Em conseqüência de uma aliança entre os nazistas e os comunistas;'; 
+document.getElementById('label-botao3').innerHTML = 'Através de uma ação golpista, cuja ponta de lança foram as forças paramilitares do Partido Nazista;'; 
+document.getElementById('label-botao4').innerHTML = 'Pelas mãos do Exército Alemão, que quis desforrar-se das humilhações impostas pelo Tratado de Versalhes;'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado125(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Entre as duas Guerras Mundiais (1919 – 1939), ocorreram alguns fatos históricos relevantes. Merecem destaque a:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ascensão da República de Weimar, a eclosão da Guerra da Coréia e a proclamação da república do Egito;'; 
+document.getElementById('label-botao2').innerHTML = 'Quebra da Bolsa de Nova Yorque, a proclamação da República Popular da China e a criação do estado de Israel;'; 
+document.getElementById('label-botao3').innerHTML = 'Ascensão do nazismo na Alemanha, o início da Nova Política Econômica na Rússia e a deflagração da Guerra Civil na Espanha;'; 
+document.getElementById('label-botao4').innerHTML = 'Deflagração da guerra entre Grécia e Turquia, a eleição de presidentes socialistas na França e em Portugal e a constituição do Pacto de Varsóvia;'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado126(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que Hitler desobedeceu o Tratado de Versalhes, imposto após o fim da Primeira Guerra, em 1918?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Fez uma aliança com os Estados Unidos'; 
+document.getElementById('label-botao2').innerHTML = 'Criou um exército maior do que 100 mil homens e com tanques e aviões'; 
+document.getElementById('label-botao3').innerHTML = 'Aceitou receber ajuda do Brasil'; 
+document.getElementById('label-botao4').innerHTML = 'Transferiu a capital para Munique'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado127(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o estopim da Segunda Guerra?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Invasão da União Soviética'; 
+document.getElementById('label-botao2').innerHTML = 'Invasão da Renânia'; 
+document.getElementById('label-botao3').innerHTML = 'Invasão da Polônia'; 
+document.getElementById('label-botao4').innerHTML = 'Invasão da França'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado128(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual a estratégia usada pelos alemães que foi usada para conquistar a França e a Polônia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Ataques por mar'; 
+document.getElementById('label-botao2').innerHTML = 'Trincheiras'; 
+document.getElementById('label-botao3').innerHTML = 'Ataques somente por terra'; 
+document.getElementById('label-botao4').innerHTML = 'Blitzkrieg'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado129(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que os japoneses atacaram os americanos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Declaração de guerra à Alemanha'; 
+document.getElementById('label-botao2').innerHTML = 'Criação da bomba atômica'; 
+document.getElementById('label-botao3').innerHTML = 'Quebra das relações comerciais dos Eua com o Japão, principalmente parar de exportar petróleo'; 
+document.getElementById('label-botao4').innerHTML = 'Eleição do presidente Roosvelt'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado130(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual dos países abaixo era neutro?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Nouruega'; 
+document.getElementById('label-botao2').innerHTML = 'Holanda'; 
+document.getElementById('label-botao3').innerHTML = 'Espanha'; 
+document.getElementById('label-botao4').innerHTML = 'Dinamarca'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado131(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o nome dado à invasão da Normandia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Dia A'; 
+document.getElementById('label-botao2').innerHTML = 'Dia B'; 
+document.getElementById('label-botao3').innerHTML = 'Dia C'; 
+document.getElementById('label-botao4').innerHTML = 'Dia D'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado131(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual o apelido dado à Heirich Himmler, líder do Holocausto?"; 
+
+document.getElementById('label-botao1').innerHTML = 'A morte'; 
+document.getElementById('label-botao2').innerHTML = 'Anjo da morte'; 
+document.getElementById('label-botao3').innerHTML = 'Pesadelo'; 
+document.getElementById('label-botao4').innerHTML = 'Diabo'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado132(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual a última ofensiva realizada por Hitler, para reassumir a ofensiva?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Dia D'; 
+document.getElementById('label-botao2').innerHTML = 'Batalha de El Alamein'; 
+document.getElementById('label-botao3').innerHTML = 'Batalha de Midway'; 
+document.getElementById('label-botao4').innerHTML = 'Batalha de Stalingrado'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado133(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o motivo pelo qual o Japão se rendeu?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Cerco a Tóquio'; 
+document.getElementById('label-botao2').innerHTML = 'Morte do Imperador'; 
+document.getElementById('label-botao3').innerHTML = ' Lançamento das bombas atômicas'; 
+document.getElementById('label-botao4').innerHTML = 'Declaração de Guerra ao Japão pela União Soviética'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado134(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por que houve o início da Guerra Fria entre os EUA e a URSS?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Disputas políticas e por demonstração de poder, além de os Eua planejarem a capitalização da Alemanha dividida sem o consenso da URSS'; 
+document.getElementById('label-botao2').innerHTML = 'Assassinato de Stálin por agente americanos'; 
+document.getElementById('label-botao3').innerHTML = 'Revolta anti-comunista dentro da União Soviética'; 
+document.getElementById('label-botao4').innerHTML = 'Queda do Muro de Berlim'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+function simulado135(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi a primeira civilização a habitar a Mesopotâmia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Hititas'; 
+document.getElementById('label-botao2').innerHTML = 'Amoritas'; 
+document.getElementById('label-botao3').innerHTML = 'Caldeus'; 
+document.getElementById('label-botao4').innerHTML = 'Sumérios'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado136(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual destas cidades não pertence a Mesopotãmia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Nínive'; 
+document.getElementById('label-botao2').innerHTML = 'Sídon'; 
+document.getElementById('label-botao3').innerHTML = 'Ur'; 
+document.getElementById('label-botao4').innerHTML = 'Assur'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado137(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o primeiro Império da história?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Império Assírio'; 
+document.getElementById('label-botao2').innerHTML = 'Império Amorita'; 
+document.getElementById('label-botao3').innerHTML = 'Império Acádio'; 
+document.getElementById('label-botao4').innerHTML = 'Império Sumério'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado138(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Que cidade colonizava as cidades sumérias?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Elão'; 
+document.getElementById('label-botao2').innerHTML = 'Assur'; 
+document.getElementById('label-botao3').innerHTML = 'Babilônia'; 
+document.getElementById('label-botao4').innerHTML = 'Persépolis'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado139(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem dominou os Acádios?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Babilôncos'; 
+document.getElementById('label-botao2').innerHTML = 'Elamitas'; 
+document.getElementById('label-botao3').innerHTML = 'Persas'; 
+document.getElementById('label-botao4').innerHTML = 'Assírios'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado140(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O Primeiro Império Babilônico foi formado por qual pov"; 
+
+document.getElementById('label-botao1').innerHTML = 'Amoritas'; 
+document.getElementById('label-botao2').innerHTML = 'Amorreus'; 
+document.getElementById('label-botao3').innerHTML = 'Medos'; 
+document.getElementById('label-botao4').innerHTML = 'Cassitas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado141(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi o principal Zigurate construído por Hamurabi?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Jardins Suspensos'; 
+document.getElementById('label-botao2').innerHTML = 'Pirâmide de Numa'; 
+document.getElementById('label-botao3').innerHTML = 'Templo de Marduque'; 
+document.getElementById('label-botao4').innerHTML = 'Torre de Babel'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado142(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quais povos destruíram Babilônia em 1530 a.C?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Cassitas e elamitas'; 
+document.getElementById('label-botao2').innerHTML = 'Persas e Assírios'; 
+document.getElementById('label-botao3').innerHTML = 'Caldeus e Medos'; 
+document.getElementById('label-botao4').innerHTML = 'Assírios e hititas'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado143(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual desses povos não foram dominados pelos assírios?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Israelitas'; 
+document.getElementById('label-botao2').innerHTML = 'Anatólios'; 
+document.getElementById('label-botao3').innerHTML = 'Sírios'; 
+document.getElementById('label-botao4').innerHTML = 'Babilônios'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado144(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual desses não foi um rei Assírio?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sargão I'; 
+document.getElementById('label-botao2').innerHTML = 'Assurbanípal'; 
+document.getElementById('label-botao3').innerHTML = 'Assaradão'; 
+document.getElementById('label-botao4').innerHTML = 'Senaqueribe'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado145(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Que rei fundou o Império Neobabilônico?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Nabopolasar'; 
+document.getElementById('label-botao2').innerHTML = 'Namuíbe I'; 
+document.getElementById('label-botao3').innerHTML = 'Nabucodonosor II'; 
+document.getElementById('label-botao4').innerHTML = 'Hamurabi II'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+
+function simulado146(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano ocorreu o Cativeiro da Babilônia?"; 
+
+document.getElementById('label-botao1').innerHTML = '2 d.C'; 
+document.getElementById('label-botao2').innerHTML = '587 a.C'; 
+document.getElementById('label-botao3').innerHTML = '598 a.C'; 
+document.getElementById('label-botao4').innerHTML = '625 a.C'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado147(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Como era chamado o governante de cada cidade-Estado suméria?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Politico'; 
+document.getElementById('label-botao2').innerHTML = 'Piorio'; 
+document.getElementById('label-botao3').innerHTML = 'Potifar'; 
+document.getElementById('label-botao4').innerHTML = 'Patesi'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado148(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem era o principal deus dos Babilônicos?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Numa'; 
+document.getElementById('label-botao2').innerHTML = 'Assur'; 
+document.getElementById('label-botao3').innerHTML = 'Marduque'; 
+document.getElementById('label-botao4').innerHTML = 'Amon'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado149(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual era a capital do Império Assírio?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Assur'; 
+document.getElementById('label-botao2').innerHTML = 'Nínive'; 
+document.getElementById('label-botao3').innerHTML = 'Jerusalém'; 
+document.getElementById('label-botao4').innerHTML = 'Nova Babilônia'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado150(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Que ano se iniciou o Império Assírio?"; 
+
+document.getElementById('label-botao1').innerHTML = '911 a.C'; 
+document.getElementById('label-botao2').innerHTML = '1128 a.C'; 
+document.getElementById('label-botao3').innerHTML = '5500 a.C'; 
+document.getElementById('label-botao4').innerHTML = '604 a.C'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado151(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual foi a principal obra arquitetônica do Império Neobabilônico?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Torre de Babel'; 
+document.getElementById('label-botao2').innerHTML = 'Palácio de Trento'; 
+document.getElementById('label-botao3').innerHTML = 'Jardins Suspensos'; 
+document.getElementById('label-botao4').innerHTML = 'Farol de Nipur'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado152(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem pôs fim ao Império Neobabilônico?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Os Persas'; 
+document.getElementById('label-botao2').innerHTML = 'Os egípcios'; 
+document.getElementById('label-botao3').innerHTML = 'Os romanos'; 
+document.getElementById('label-botao4').innerHTML = 'Os Assírios'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado153(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Dia e mês da invasão nazista a Polônia?"; 
+
+document.getElementById('label-botao1').innerHTML = '1 de Agosto'; 
+document.getElementById('label-botao2').innerHTML = '3 de Agosto'; 
+document.getElementById('label-botao3').innerHTML = '1 de setembro'; 
+document.getElementById('label-botao4').innerHTML = '5 de dezembro'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado154(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Um país pertenceu ao Eixo até 1941, que país é esse?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Brasil'; 
+document.getElementById('label-botao2').innerHTML = 'França'; 
+document.getElementById('label-botao3').innerHTML = 'Russia'; 
+document.getElementById('label-botao4').innerHTML = 'Estados unidos'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado155(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "6 de junho de 1944 foi marcado por uma grande operação militar, que levou os aliados a entrar na Europa, qual o nome dessa operação?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Operação Barbarossa'; 
+document.getElementById('label-botao2').innerHTML = 'Operação Shingle'; 
+document.getElementById('label-botao3').innerHTML = 'Operação Carvalho'; 
+document.getElementById('label-botao4').innerHTML = 'Dia D'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado156(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O partido nazista foi criado em que ano?"; 
+
+document.getElementById('label-botao1').innerHTML = '1919'; 
+document.getElementById('label-botao2').innerHTML = '1819'; 
+document.getElementById('label-botao3').innerHTML = '1933'; 
+document.getElementById('label-botao4').innerHTML = '1923'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado157(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Durante a Guerra, Hitler temia uma coisa, o que era?"; 
+
+document.getElementById('label-botao1').innerHTML = ' Lutar em 2 frentes de batalha'; 
+document.getElementById('label-botao2').innerHTML = 'Perder a guerra'; 
+document.getElementById('label-botao3').innerHTML = 'Ganhar a guerra'; 
+document.getElementById('label-botao4').innerHTML = 'Morte'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado158(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quantos dias após a morte de Adolf Hitler, a Alemanha se rendeu?"; 
+
+document.getElementById('label-botao1').innerHTML = '3 dias'; 
+document.getElementById('label-botao2').innerHTML = '1 dia'; 
+document.getElementById('label-botao3').innerHTML = '8 dias'; 
+document.getElementById('label-botao4').innerHTML = '22 dias'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado159(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Onde judeus eram mantidos e forçados a trabalhar"; 
+
+document.getElementById('label-botao1').innerHTML = 'Campos de concentração ou Guetos'; 
+document.getElementById('label-botao2').innerHTML = 'Casa de Hitler'; 
+document.getElementById('label-botao3').innerHTML = 'Sibéria'; 
+document.getElementById('label-botao4').innerHTML = 'Gulags'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado160(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A campanha da Alemanha acabou em 1945, mas em qual mês?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Dezembro'; 
+document.getElementById('label-botao2').innerHTML = 'Junho'; 
+document.getElementById('label-botao3').innerHTML = 'Abril'; 
+document.getElementById('label-botao4').innerHTML = 'Maio'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado161(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quantos países foram dominados pelos Nazistas de 1939 até 1945?"; 
+
+document.getElementById('label-botao1').innerHTML = '14'; 
+document.getElementById('label-botao2').innerHTML = '24'; 
+document.getElementById('label-botao3').innerHTML = '12'; 
+document.getElementById('label-botao4').innerHTML = '65'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
 </script>
 
 </head>
@@ -703,12 +4744,12 @@ erro();
 
 </div> <!-- header-->
 
-	<div style="display: none;">
-	<input type="radio" name="alternativa" id="alternativa1" value="verdadeira"> 
-	<input type="radio" name="alternativa" id="alternativa2" value="verdadeira"> 
-	<input type="radio" name="alternativa" id="alternativa3" value="verdadeira"> 
-	<input type="radio" name="alternativa" id="alternativa4" value="verdadeira">
-	</div>
+  <div style="display: none;">
+  <input type="radio" name="alternativa" id="alternativa1" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa2" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa3" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa4" value="verdadeira">
+  </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

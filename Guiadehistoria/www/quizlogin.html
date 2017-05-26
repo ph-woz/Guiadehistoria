@@ -25,12 +25,14 @@ function onDR(){
     document.addEventListener("backbutton", backKeyDown, true);
 }
 function backKeyDown() { 
-
-location.href='index.html';
-
+    location.href='index.html';
 }
 
 function carrega(){
+onDR();
+document.getElementById('acerto').innerHTML += localStorage.getItem('acerto').length;
+document.getElementById('erro').innerHTML += localStorage.getItem('erro').length;
+document.getElementById('jogo').innerHTML += localStorage.getItem('acerto').length + localStorage.getItem('erro').length;
 
       admob.setOptions({
         publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
@@ -42,14 +44,7 @@ function carrega(){
       
       admob.createBannerView();
       admob.requestInterstitialAd();
-
-onDR();
-document.getElementById('acerto').innerHTML += localStorage.getItem('acerto').length;
-document.getElementById('erro').innerHTML += localStorage.getItem('erro').length;
-document.getElementById('jogo').innerHTML += localStorage.getItem('acerto').length + localStorage.getItem('erro').length;
-
 }
-
 
 function filtrar(){
 document.getElementById('cancelar').style.display = 'block';
