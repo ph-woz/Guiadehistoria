@@ -1742,10 +1742,12 @@ texto = "Willian Shakespeare é o maior poeta e dramaturgo da Inglaterra e um do
 document.getElementById("texto").innerHTML = texto;
 
 if(field != ""){
+otherscreen = true;
 document.getElementById('filtrar').style.display = 'none'; 	
 document.getElementById('quiz').style.display = 'none'; 	
 }
 if(field == "" && emfiltro == ""){
+otherscreen = false;
 document.getElementById('filtrar').style.display = 'block'; 	
 document.getElementById('quiz').style.display = 'block'; 
 }
@@ -1827,8 +1829,11 @@ document.getElementById('btn-cancel-filtro').style.display = 'none';
 }
 
 
+var otherscreen = false;
+
 function filtrar (){
 
+otherscreen = true;
 document.getElementById('search').style.display = 'none';
 document.getElementById('filtrar').style.display = 'none';
 document.getElementById('quiz').style.display = 'none';
@@ -1837,7 +1842,7 @@ document.getElementById('painel-filtrar').style.display = 'block';
 }
 
 function cancelar (){
-
+otherscreen = false;
 if(emfiltro == null){
 document.getElementById('search').style.display = 'block';
 document.getElementById('painel-index-pai').style.display = 'block';
@@ -1898,16 +1903,15 @@ function onDR(){
 }
 function backKeyDown() { 
 
-	if(document.getElementById('search').value == "" && emfiltro == null){
+	if(document.getElementById('search').value == "" && otherscreen == false && emfiltro == null){
 	navigator.app.exitApp(); 
 	}
 	if(document.getElementById('search').value != "" && emfiltro == "biografias"){
-	alert('ok');
 	field = '';
 	document.getElementById("texto").innerHTML = '';
 	biografias();
-
 	}
+
 
 	if(document.getElementById('search').value != ""){
 	document.getElementById("texto").innerHTML = '';
