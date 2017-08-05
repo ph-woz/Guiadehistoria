@@ -25,26 +25,20 @@ function onDR(){
     document.addEventListener("backbutton", backKeyDown, true);
 }
 function backKeyDown() { 
-    location.href='index.html';
+
+location.href='index.html';
+
 }
 
 function carrega(){
+
 onDR();
 document.getElementById('acerto').innerHTML += localStorage.getItem('acerto').length;
 document.getElementById('erro').innerHTML += localStorage.getItem('erro').length;
 document.getElementById('jogo').innerHTML += localStorage.getItem('acerto').length + localStorage.getItem('erro').length;
 
-      admob.setOptions({
-        publisherId:          "ca-app-pub-8177479416631931/7394143205",  // Required 
-        interstitialAdId:     "ca-app-pub-8177479416631931/8731275605",  // Optional 
-        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional 
-        tappxIdAndroid:       "/120940746/Pub-18450-Android-4395",        // Optional 
-        tappxShare:           0.5                                        // Optional 
-      });
-      
-      admob.createBannerView();
-      admob.requestInterstitialAd();
 }
+
 
 function filtrar(){
 document.getElementById('cancelar').style.display = 'block';
@@ -77,21 +71,20 @@ document.getElementById('painel-filtrar-quiz').style.display = 'none';
 </div>
 </strong>
 
-<!--<button id="filtrar" onclick="filtrar()"> <strong>Filtrar</strong></button>-->
+<button id="filtrar" onclick="filtrar()"> <strong>Filtrar</strong></button>
 <button id="cancelar" onclick="cancelar()" style="display:none;"> <strong>Cancelar</strong></button>
-
-<div id="painel-filtrar-quiz" style=" display:none;">
-    <button id="btn-conteudo" onclick="dado = 'historiadobr'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">História do Brasil</button>
-    <button id="btn-conteudo" onclick="dado = 'guerras'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Guerras Napoleônicas</button>
-    <button id="btn-conteudo" onclick="dado = 'nazismo'; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Nazismo e Facismo</button>
-</div>
 
 <br><br>
 <div id="jogar">
 <button id="btn-conteudo" onclick="dado = ''; sessionStorage.setItem('dado', dado); location.href='quiz.html';">Jogar</button>
 </div>
+    <br>
 
-<br>
+<div id="painel-filtrar-quiz" style="display: none;">
+    <button id="btn-conteudo" onclick="location.href='quizhistoriadobr.html';" style="display: none;">História do Brasil</button>
+    <button id="btn-conteudo" onclick="location.href='quizrevolucaorussa.html';">Revolução Russa</button>
+    <button id="btn-conteudo" onclick="location.href='quizrevolucaoussa.html';" style="display: none;">Nazismo e Facismo</button>
+</div>
 
 </div> <!-- header-->
 

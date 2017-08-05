@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Quiz</title>
+
+
+<script>
+
+function onConfirm(button) {
+
+    if(button == 1){ carrega(); }
+    if(button == 2){ location.href='quizlogin.html'; }
+}
+
+
+function showConfirm() {
+    navigator.notification.confirm(
+        'Deseja continuar?',
+        onConfirm,              
+        'Aguardando',       
+        'Sim,Não'          
+    );
+}
+
+ function acertoponto() {
+      
+  var acerto = localStorage.getItem('acerto');
+  acerto = acerto + 1;
+  localStorage.setItem('acerto', acerto); 
+  showConfirm();
+ }
+
+ function erroponto() {
+
+  var erro = localStorage.getItem('erro');
+  erro = erro + 1;
+  localStorage.setItem('erro', erro); 
+  showConfirm();
+ }
+
+    function acerto() {
+        navigator.notification.alert(
+            'Acertou! :)', 
+            acertoponto,         
+            'Parabéns',         
+            'Ok'                  
+        );
+    }
+
+    function erro() {
+        navigator.notification.alert(
+            'Errou! :( \n\nResposta correta:\n' +  respostacerta, 
+            erroponto,         
+            'Ops',         
+            'Ok'                  
+        );
+    }
+
+
+function init() {
+    document.addEventListener("deviceready", onDR, false);
+} 
+function onDR(){
+    document.addEventListener("backbutton", backKeyDown, true);
+}
+function backKeyDown() { 
+    
+    if(document.getElementById('alternativa1').checked == false &&
+       document.getElementById('alternativa2').checked == false &&
+       document.getElementById('alternativa3').checked == false &&       
+       document.getElementById('alternativa4').checked == false)
+       {
+      navigator.notification.alert('Termine este Quiz para sair.', null,'Ops','Ok');
+     }
+}
+
+
+var x;
+
+function carrega(){
+
+  onDR();
+  check1 = false;
+  check2 = false;
+  check3 = false;
+  check4 = false;
+
+  x = Math.floor((Math.random() * 32) + 1);
+  verifica();
+}
+
+function verifica(){
+
+  if(x == 1){ simulado1(); }
+  if(x == 2){ simulado2(); }
+  if(x == 3){ simulado3(); }
+  if(x == 4){ simulado4(); }
+  if(x == 5){ simulado5(); }
+  if(x == 6){ simulado6(); }
+  if(x == 7){ simulado7(); }
+  if(x == 8){ simulado8(); }
+  if(x == 9){ simulado9(); }
+  if(x == 10){ simulado10(); }
+  if(x == 11){ simulado11(); }
+  if(x == 12){ simulado12(); }
+  if(x == 13){ simulado13(); }
+  if(x == 14){ simulado14(); }
+  if(x == 15){ simulado15(); }
+  if(x == 16){ simulado16(); }
+  if(x == 17){ simulado17(); }
+  if(x == 18){ simulado18(); }
+  if(x == 19){ simulado19(); }
+  if(x == 20){ simulado20(); }
+  if(x == 21){ simulado21(); }
+  if(x == 22){ simulado22(); }
+  if(x == 23){ simulado23(); }
+  if(x == 24){ simulado24(); }
+  if(x == 25){ simulado25(); }
+  if(x == 26){ simulado26(); }
+  if(x == 27){ simulado27(); }
+  if(x == 28){ simulado28(); }
+  if(x == 29){ simulado29(); }
+  if(x == 30){ simulado30(); }
+  if(x == 31){ simulado31(); }
+  if(x == 32){ simulado32(); }
+  if(x == 33){ simulado33(); }
+  if(x == 34){ simulado34(); }
+  if(x == 35){ simulado35(); }
+  if(x == 36){ simulado36(); }
+  if(x == 37){ simulado37(); }
+  if(x == 38){ simulado38(); }
+  if(x == 39){ simulado39(); }
+  if(x == 40){ simulado40(); }
+  if(x == 41){ simulado41(); }
+  if(x == 42){ simulado42(); }
+  if(x == 43){ simulado43(); }
+  if(x == 44){ simulado44(); }
+  if(x == 45){ simulado45(); }
+  if(x == 46){ simulado46(); }
+  if(x == 47){ simulado47(); }
+  if(x == 48){ simulado48(); }
+  if(x == 49){ simulado49(); }
+  if(x == 50){ simulado50(); }
+  if(x == 51){ simulado51(); }
+  if(x == 52){ simulado52(); }
+  if(x == 53){ simulado53(); }
+  if(x == 54){ simulado54(); }
+  if(x == 55){ simulado55(); }
+  if(x == 56){ simulado56(); }
+  if(x == 57){ simulado57(); }
+  if(x == 58){ simulado58(); }
+  if(x == 59){ simulado59(); }
+  if(x == 60){ simulado60(); }
+  if(x == 61){ simulado61(); }
+  if(x == 62){ simulado62(); }
+  if(x == 63){ simulado63(); }
+  if(x == 64){ simulado64(); }
+  if(x == 65){ simulado65(); }
+  if(x == 66){ simulado66(); }
+  if(x == 67){ simulado67(); }
+  if(x == 68){ simulado68(); }
+  if(x == 69){ simulado69(); }
+  if(x == 70){ simulado70(); }
+  if(x == 71){ simulado71(); }
+  if(x == 72){ simulado72(); }
+  if(x == 73){ simulado73(); }
+  if(x == 74){ simulado74(); }
+  if(x == 75){ simulado75(); }
+  if(x == 76){ simulado76(); }
+  if(x == 77){ simulado77(); }
+  if(x == 78){ simulado78(); }
+  if(x == 79){ simulado79(); }
+  if(x == 80){ simulado80(); }
+  if(x == 81){ simulado81(); }
+  if(x == 82){ simulado82(); }
+  if(x == 83){ simulado83(); }
+  if(x == 84){ simulado84(); }
+  if(x == 85){ simulado85(); }
+  if(x == 86){ simulado86(); }
+  if(x == 87){ simulado87(); }
+  if(x == 88){ simulado88(); }
+  if(x == 89){ simulado89(); }
+  if(x == 90){ simulado90(); }
+  if(x == 91){ simulado91(); }
+  if(x == 92){ simulado92(); }
+  if(x == 93){ simulado93(); }
+  if(x == 94){ simulado94(); }
+  if(x == 95){ simulado95(); }
+  if(x == 96){ simulado96(); }
+  if(x == 97){ simulado97(); }
+  if(x == 98){ simulado98(); }
+  if(x == 99){ simulado99(); }
+  if(x == 100){ simulado100(); }
+  if(x == 101){ simulado101(); }
+  if(x == 102){ simulado102(); }
+  if(x == 103){ simulado103(); }
+  if(x == 104){ simulado104(); }
+  if(x == 105){ simulado105(); }
+  if(x == 106){ simulado106(); }
+  if(x == 107){ simulado107(); }
+  if(x == 108){ simulado108(); }
+  if(x == 109){ simulado109(); }
+  if(x == 110){ simulado110(); }
+  if(x == 111){ simulado111(); }
+  if(x == 112){ simulado112(); }
+  if(x == 113){ simulado113(); }
+  if(x == 114){ simulado114(); }
+  if(x == 115){ simulado115(); }
+  if(x == 116){ simulado116(); }
+  if(x == 117){ simulado117(); }
+  if(x == 118){ simulado118(); }
+  if(x == 119){ simulado119(); }
+  if(x == 120){ simulado120(); }
+  if(x == 121){ simulado121(); }
+  if(x == 122){ simulado122(); }
+  if(x == 123){ simulado123(); }
+  if(x == 124){ simulado124(); }
+  if(x == 125){ simulado125(); }
+  if(x == 126){ simulado126(); }
+  if(x == 127){ simulado127(); }
+  if(x == 128){ simulado128(); }
+  if(x == 129){ simulado129(); }
+  if(x == 130){ simulado130(); }
+  if(x == 131){ simulado131(); }
+  if(x == 132){ simulado132(); }
+  if(x == 133){ simulado133(); }
+  if(x == 134){ simulado134(); }
+  if(x == 135){ simulado135(); }
+  if(x == 136){ simulado136(); }
+  if(x == 137){ simulado137(); }
+  if(x == 138){ simulado138(); }
+  if(x == 139){ simulado139(); }
+  if(x == 140){ simulado140(); }
+  if(x == 141){ simulado141(); }
+  if(x == 142){ simulado142(); }
+  if(x == 143){ simulado143(); }
+  if(x == 144){ simulado144(); }
+  if(x == 145){ simulado145(); }
+  if(x == 146){ simulado146(); }
+  if(x == 147){ simulado147(); }
+  if(x == 148){ simulado148(); }
+  if(x == 149){ simulado149(); }
+  if(x == 150){ simulado150(); }
+  if(x == 151){ simulado151(); }
+  if(x == 152){ simulado152(); }
+  if(x == 153){ simulado153(); }
+  if(x == 154){ simulado154(); }
+  if(x == 155){ simulado155(); }
+  if(x == 156){ simulado156(); }
+  if(x == 157){ simulado157(); }
+  if(x == 158){ simulado158(); }
+  if(x == 159){ simulado159(); }
+  if(x == 160){ simulado160(); }
+  if(x == 161){ simulado161(); }
+
+  if(x > 161){ carrega(); }
+}
+
+
+var respostacerta;
+var check1 = document.getElementById('alternativa1').checked;
+var check2 = document.getElementById('alternativa2').checked;
+var check3 = document.getElementById('alternativa3').checked;
+var check4 = document.getElementById('alternativa4').checked;
+
+function simulado1(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A abolição do princípio da propriedade privada, a estatização dos meios de produção e a assinatura de um tratado de paz com a Alemanha, marcando a saída do país da guerra, foram as principais medidas adotadas na Rússia por:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Trotsky, em abril de 1924'; 
+document.getElementById('label-botao2').innerHTML = 'Stalin, em agosto de 1929'; 
+document.getElementById('label-botao3').innerHTML = 'Kerensky, em fevereiro de 1917'; 
+document.getElementById('label-botao4').innerHTML = 'Lenin, no início de 1918'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado2(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual grupo realizou a Revolução de Fevereiro de 1917?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Mencheviques'; 
+document.getElementById('label-botao2').innerHTML = ' Bolcheviques'; 
+document.getElementById('label-botao3').innerHTML = ' Nazistas'; 
+document.getElementById('label-botao4').innerHTML = ' Stalinistas'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado3(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem foi eleito após a Revolução Burguesa de 1917?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Rasputin'; 
+document.getElementById('label-botao2').innerHTML = 'Kerensky'; 
+document.getElementById('label-botao3').innerHTML = 'Trotsky'; 
+document.getElementById('label-botao4').innerHTML = 'Lênin'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado4(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual dessas foi uma medida que Lênin tomou logo após assumir o poder?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Colocou em vigor a NEP'; 
+document.getElementById('label-botao2').innerHTML = 'Instaurou uma monarquia parlamentarista'; 
+document.getElementById('label-botao3').innerHTML = 'Estatizou os meios de produção'; 
+document.getElementById('label-botao4').innerHTML = 'Criou a União Soviética'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado5(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quando foi realizada a Revolução Bolchevique de 1917?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Junho'; 
+document.getElementById('label-botao2').innerHTML = 'Julho'; 
+document.getElementById('label-botao3').innerHTML = 'Março'; 
+document.getElementById('label-botao4').innerHTML = 'Outubro'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado6(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano começou a Guerra Civil Russa?"; 
+
+document.getElementById('label-botao1').innerHTML = '1918'; 
+document.getElementById('label-botao2').innerHTML = '1928'; 
+document.getElementById('label-botao3').innerHTML = '1920'; 
+document.getElementById('label-botao4').innerHTML = '1915'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado7(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Na Revolução Russa, no que consistiu a Nova Politica Econômica?"; 
+
+document.getElementById('label-botao1').innerHTML = 'No investimento pesado na indústria bélica visando se preparar para um conflito ideológico com os EUA.'; 
+document.getElementById('label-botao2').innerHTML = 'Na entrada de capital estrangeiro sob forma de empréstimos e do incentivo à criação de pequenas empresas agrícolas.'; 
+document.getElementById('label-botao3').innerHTML = ' Na substituição de Lenin por Stalin, que criou a União Soviética.'; 
+document.getElementById('label-botao4').innerHTML = ' Na construção de um modelo governamental anarquista, com grande apoio dos sovietes.'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado8(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Após a morte de Lenin, quem se tornou líder da URSS?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Trotsky'; 
+document.getElementById('label-botao2').innerHTML = 'Kruschev'; 
+document.getElementById('label-botao3').innerHTML = 'Stalin'; 
+document.getElementById('label-botao4').innerHTML = 'Gorbachev'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado9(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em que ano foi criada a União das Repúblicas Socialistas Soviéticas?"; 
+
+document.getElementById('label-botao1').innerHTML = '1915'; 
+document.getElementById('label-botao2').innerHTML = '1918'; 
+document.getElementById('label-botao3').innerHTML = '1920'; 
+document.getElementById('label-botao4').innerHTML = '1922'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado10(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Revolução Russa de 1917 iniciou-se em março com a derrubada do czar Nicolau II e com a formação de um governo provisório, por sua vez derrotado pelo levante bolchevista de novembro do mesmo ano. Destes movimentos, destacaram-se como as principais figuras:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Kerensky e Lênin.'; 
+document.getElementById('label-botao2').innerHTML = 'Lênin e Trotsky'; 
+document.getElementById('label-botao3').innerHTML = 'Trotsky e Kerensky'; 
+document.getElementById('label-botao4').innerHTML = 'Stálin e Lênin.'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado11(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Há controvérsias entre historiadores sobre o caráter das duas grandes revoluções do mundo contemporâneo, a Francesa de 1789 e a Russa de 1917; no entanto, existe consenso sobre o fato de que ambas"; 
+
+document.getElementById('label-botao1').innerHTML = 'Fracassaram, uma vez que, depois de Napoleão, a França voltou ao feudalismo com os Bourbons e a União Soviética, depois de Gorbatchev, ao capitalismo.'; 
+document.getElementById('label-botao2').innerHTML = 'Geraram resultados diferentes as intenções revolucionárias, pois tanto a burguesia francesa quanto a russa eram contrárias a todo tipo de governo autoritário.'; 
+document.getElementById('label-botao3').innerHTML = 'Foram marcos políticos e ideológicos, inspirando, a primeira, as revoluções até 1917, e a segunda, os movimentos socialistas até a década de 1970.'; 
+document.getElementById('label-botao4').innerHTML = 'Efetivaram mudanças profundas que resultaram na superação do capitalismo na França e do feudalismo na Rússia.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado12(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Uma das principais causas da Revolução Russa foi a situação de injustiça social que afetava as camadas mais pobres da população no começo do século XX. Qual das alternativas abaixo apresenta características do contexto histórico da Rússia pré-revolução?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Trabalhadores urbanos, clero e nobreza pagavam altos impostos; setor industrial desenvolvido; camponeses vivendo em situação de miséria.'; 
+document.getElementById('label-botao2').innerHTML = 'Agricultura atrasada, distribuição de renda igualitária; privilégios sociais, políticos e econômicos para a nobreza.'; 
+document.getElementById('label-botao3').innerHTML = 'Boa situação econômica para toda população, falta de democracia, altos impostos pagos pela nobreza e clero.'; 
+document.getElementById('label-botao4').innerHTML = 'trabalhadores rurais vivendo em extrema situação de pobreza; economia atrasada; altos impostos pagos pelas camadas mais baixas da sociedade.'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado13(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Revolução Russa de outubro de 1917 foi liderada por Lênin e os revolucionários prometiam as seguintes ações:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Implantação o sistema capitalista na Rússia após a revolução'; 
+document.getElementById('label-botao2').innerHTML = 'Um governo socialista, apoiado pela nobreza russa'; 
+document.getElementById('label-botao3').innerHTML = 'Distribuição de terras, igualdade social, democracia e participação do clero nas decisões do governo'; 
+document.getElementById('label-botao4').innerHTML = 'Paz (saída da Rússia da 1ª Guerra Mundial), terra, pão, liberdade e trabalho'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado14(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual das alternativas abaixo apresenta as principais mudanças ocorridas na Rússia após a revolução e implantação do socialismo?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Nacionalização de bancos; implantação de leis que favoreciam os donos de indústrias, implantação de sistema democrática com eleições livres e diretas para todos os cargos públicos'; 
+document.getElementById('label-botao2').innerHTML = 'Redistribuição de terras para os trabalhadores do campo'; 
+document.getElementById('label-botao3').innerHTML = 'Redistribuição de terras para os trabalhadores do campo; nacionalização de bancos; controle das fábricas pelos operários'; 
+document.getElementById('label-botao4').innerHTML = 'Implantação de sistema democrático, fortalecimento de laços econômicos e militares com os Estados Unidos, criação de governo composto por integrantes de todas as camadas da sociedade russa'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado15(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual das alternativas abaixo explica melhor a situação política da Rússia após a Revolução?"; 
+
+document.getElementById('label-botao1').innerHTML = 'O sistema político era unipartidário, ou seja, o governo era controlado por um único partido político: PC (Partido Comunista)'; 
+document.getElementById('label-botao2').innerHTML = 'O sistema político era bipartidário, ou seja, o governo era controlado por dois partidos políticos: PC (Partido Comunista) e PM (Partido Monarquista)'; 
+document.getElementById('label-botao3').innerHTML = 'Existiam várias partidos políticos e os presidentes eram escolhidos através de eleições diretas'; 
+document.getElementById('label-botao4').innerHTML = 'Embora houvesse apenas um partido político, o Partido Comunista, havia muita liberdade política e de expressão onde todos podiam manifestar livremente suas opiniões e posições políticas sem sofrer perseguições'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+}
+
+function simulado16(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em 1922 foi implantada a URSS (União das Repúblicas Socialistas Soviéticas). Qual das alternativas abaixo apresenta características da URSS"; 
+
+document.getElementById('label-botao1').innerHTML = 'Total liberdade política, investimentos em arte e cultura, política econômica voltada para as camadas mais pobres da população'; 
+document.getElementById('label-botao2').innerHTML = 'Sistema econômico capitalista, política militarista, aliança política e militar com os Estados Unidos e Grã-Bretanha'; 
+document.getElementById('label-botao3').innerHTML = 'Adesão à economia de mercado, fortes laços comerciais com países do oeste europeu, repressão aos opositores políticos'; 
+document.getElementById('label-botao4').innerHTML = 'Falta de democracia, governo controlado pelo Partido Comunista, fortes investimentos nos setores industrial e bélico'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado17(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em 1921, o problema nacional central era o da recuperação econômica - o índice de desespero do país é eloquente: naquele ano, 36 milhões de pessoas não tinham o que comer. Nas novas e ruinosas condições da paz, o “comunismo de guerra” revelava-se insuficiente: era preciso estimular mais efetivamente os mecanismos econômicos da sociedade. Assim, ainda em 1921, no X Congresso do Partido, Lenin propõe um plano econômico de emergência: a Nova Política Econômica. Sobre a chamada Nova Política Econômica é correto afirmar que:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Antes da revolução, a Rússia não havia experimentado nenhum tipo de política socialista. Dessa forma, a NEP não poderia representar um retorno a algo que nunca fora anteriormente instituído'; 
+document.getElementById('label-botao2').innerHTML = 'Observando o grave desgaste causado pela Primeira Guerra Mundial e a própria Guerra Civil, Lênin permitiu que ações políticas capitalistas convivessem temporariamente com o governo socialista. Desta forma, ele pretendia fomentar uma rápida recuperação da economia nacional'; 
+document.getElementById('label-botao3').innerHTML = 'Mesmo apresentando ações de natureza socialista, a questão se invalida ao não considerar a abertura que a NEP dava a algumas práticas econômicas capitalistas'; 
+document.getElementById('label-botao4').innerHTML = 'A NEP foi uma hábil solução encontrada por Lênin para arrefecer os terríveis efeitos que o processo revolucionário tinham imposto à economia russa'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+}
+
+function simulado18(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Sobre a Revolução Russa, é correto afirmar que"; 
+
+document.getElementById('label-botao1').innerHTML = 'Em 1904 a Rússia se envolveu em uma guerra contra o Japão. Este conflito desorganizou a economia piorando a situação dos operários e camponeses. A humilhação da derrota acirrou os ânimos contra o czar. No ano seguinte, os habitantes saíram em uma passeata a fim de entregar um abaixo-assinado ao Imperador pedindo melhoras nas condições de vida e a instalação de um parlamento. O czar respondeu com um massacre promovido por suas tropas, aumentando ainda mais a revolta do povo'; 
+document.getElementById('label-botao2').innerHTML = 'No século XIX, a Rússia juntamente com a Inglaterra, a Itália, Portugal e a China, era uma das maiores potências europeias, porém enquanto os outros países cresciam, faziam reformas e se industrializavam, a Rússia não se modernizava.'; 
+document.getElementById('label-botao3').innerHTML = 'Os sovietes eram organizações políticas que nasceram no seio das camadas mais ricas do país e representavam os interesses dos burgueses. Assim, havia os sovietes de operários, de camponeses e de soldados. Expressavam uma forma de poder popular em oposição ao governo provisório e se tornaram decisivos nos rumos políticos do país'; 
+document.getElementById('label-botao4').innerHTML = 'Após a morte de Lênin, Trotsky (chefe do exército) e Stálin foram os dois líderes que disputaram o poder. Trotsky saiu vencedor'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado19(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "No final da primavera de 1921, um grande artigo de Lenin define o que será a NEP [Nova política econômica]: supressão das requisições, impostos em gêneros (para os camponeses); liberdade de comércio; liberdade de produção artesanal; concessões aos capitalistas estrangeiros; liberdade de empresa – é verdade que restrita – para os cidadãos soviéticos. [...] Ao mesmo tempo, recusa qualquer liberdade política ao país: “Os mencheviques continuarão presos”, e anuncia uma depuração do partido, dirigida contra os revolucionários oriundos de outros partidos, isto é, não imbuídos da mentalidade bolchevique. O texto identifica duas características do processo de constituição da União Soviética: "; 
+
+document.getElementById('label-botao1').innerHTML = 'A reconciliação entre as principais facções social-democratas e a implantação de um sistema político que atribuía todo poder aos sovietes de soldados, operários e camponeses'; 
+document.getElementById('label-botao2').innerHTML = 'O reconhecimento do fracasso político e social dos ideais comunistas e o restabelecimento do capitalismo liberal como modo de produção hegemônico no país'; 
+document.getElementById('label-botao3').innerHTML = 'A estatização das empresas e dos capitais estrangeiros investidos no país e a nacionalização de todos os meios de produção, com a implantação do chamado comunismo de guerra'; 
+document.getElementById('label-botao4').innerHTML = 'A aguda centralização do poder nas mãos do partido governante e o restabelecimento temporário de algumas práticas capitalistas, que visavam à aceleração do crescimento econômico do país'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado20(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O Estado Soviético, formado após a Revolução Russa, cuidou de expurgar da cultura desse país toda e qualquer manifestação artística que estivesse, no entendimento das autoridades, associada ao chamado “espírito burguês”. Foi criada, então, uma política cultural que decretava como arte oficial apenas as expressões que servissem de estímulo para a ideologia do proletariado. Dessa forma, foi consagrado um estilo conhecido por:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Expressionismo soviético - que, através de uma orientação estética intimista, procurava expor a "alma inquieta dos povos eslavos", que passaram a integrar a União das Repúblicas Socialistas Soviéticas'; 
+document.getElementById('label-botao2').innerHTML = 'Abstracionismo proletário - que, através da decomposição geométrica do real, exprimia a "ordenação sincrônica da sociedade comunista"'; 
+document.getElementById('label-botao3').innerHTML = 'Realismo socialista - que, através de composições didáticas, esteticamente simplificadas, procurava enaltecer a "combatividade, a capacidade de trabalho e a consciência social" do povo soviético'; 
+document.getElementById('label-botao4').innerHTML = 'Romantismo comunista - que, através de um figurativismo apenas sugestivo, procurava realizar a "idealização do mujique", o camponês russo típico, como representante das raízes culturais russas'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado21(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Revolução Socialista na Rússia, em 1917, foi um dos acontecimentos mais significativos do século XX, uma vez que colocou em xeque a ordem socioeconômica capitalista. Sobre o desencadeamento do processo revolucionário, é correto afirmar que:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Foi realimentado pela participação da Rússia na Primeira Guerra Mundial, o que desencadeou uma série de greves e revoltas populares em razão da crise de abastecimento de alimentos'; 
+document.getElementById('label-botao2').innerHTML = 'Os mencheviques tiveram um papel fundamental no processo revolucionário por defenderem a implantação ditadura do proletariado. b) os bolcheviques representavam a ala mais conservadora dos socialistas, sendo derrotados, pelos mencheviques, nas jornadas de outubro'; 
+document.getElementById('label-botao3').innerHTML = 'Foi liderada por Stalin, a partir de outubro, que estabeleceu a tese da necessidade da revolução em um só país, em oposição a Trotsky, líder do exército vermelho'; 
+document.getElementById('label-botao4').innerHTML = 'O Partido Comunista conseguiu superar os conflitos que existiam no seu interior quando estabeleceu a Nova Política Econômica que representava os interesses dos setores mais conservadores'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado22(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A Revolução Russa de 1917 derrubou o regime czarista e estabeleceu o socialismo no país. Considerando as medidas adotadas pelo novo governo, é confirmado afirmar que"; 
+
+document.getElementById('label-botao1').innerHTML = 'Com a abdicação do Czar, estabeleceu-se uma aliança política entre os líderes do regime czarista e os dirigentes do governo provisório'; 
+document.getElementById('label-botao2').innerHTML = ' Lênin, prisioneiro político exilado na Sibéria, ficou excluído do processo revolucionário';
+document.getElementById('label-botao3').innerHTML = 'O governo socialista colocou em prática, imediatamente, o projeto de reconstrução da economia, a Nova Política Econômica (NEP)'; 
+document.getElementById('label-botao4').innerHTML = 'A fase inicial do processo caracterizou-se pela alteração nas leis dos direitos civis, pela anulação dos títulos de nobreza, pela separação entre Igreja e Estado, pela reforma agrária e pelo fim da propriedade privada'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+function simulado23(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Sobre o contexto social da Rússia, anterior à Revolução Bolchevique de 1917, é incorreto dizer que:"; 
+
+document.getElementById('label-botao1').innerHTML = 'A grande massa da população era camponesa, reflexo das condições econômicas e sociais anteriores, havendo grande concentração fundiária nas mãos de poucos'; 
+document.getElementById('label-botao2').innerHTML = 'A industrialização estava restrita a poucas cidades, como Moscou e São Petersburgo, e fora financiada, em grande parte, pelo capital europeu ocidental'; 
+document.getElementById('label-botao3').innerHTML = 'Apresentava uma burguesia forte e organizada, com um projeto revolucionário amadurecido, que defendia, entre outros aspectos, a criação de uma República no lugar do governo czarista'; 
+document.getElementById('label-botao4').innerHTML = 'O proletariado enfrentava péssimas condições de vida nas cidades, fruto dos baixos salários, mas dispunha de um certo grau de organização política, que possibilitava sua mobilização'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado24(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O retorno a uma semi-economia de mercado provocou o reaparecimento da moeda e, durante o ano de 1921, renasceu o mercado propriamente dito. A desnacionalização de empresas começou respectivamente pelo pequeno e grande comércio, atingindo, mais tarde, a indústria leve. As cooperativas foram devolvidas aos seus antigos acionistas e, no final do ano, permaneciam nas mãos do Estado apenas os setores economicamente estratégicos, o crédito e a indústria pesada. O trecho apresentado refere-se a um momento da Revolução Russa, no qual"; 
+
+document.getElementById('label-botao1').innerHTML = 'O Estado soviético implementa a Nova Política Econômica, procurando superar as dificuldades econômicas e sociais advindas do Comunismo de Guerra'; 
+document.getElementById('label-botao2').innerHTML = 'O partido bolchevista promove um processo de abertura política, instaurando um regime político democrático e pluripartidário'; 
+document.getElementById('label-botao3').innerHTML = 'O governo leninista, enfraquecido pela guerra civil, é obrigado a fazer concessões à tradicional nobreza czarista'; 
+document.getElementById('label-botao4').innerHTML = 'O Estado soviético aplica uma política de planificação econômica e de coletivização de terras denominada de Planos Qüinqüenais'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado25(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Em abril de 1917, o líder bolchevique Lenin, exilado em Zurique (Suíça), voltou à Rússia lançando as Teses de Abril. Nesse programa político é incorreto afirmar que Lenin propunha a/o:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Formação de uma República de sovietes'; 
+document.getElementById('label-botao2').innerHTML = 'Concessão à defesa nacional, dando total apoio ao governo provisório'; 
+document.getElementById('label-botao3').innerHTML = 'Nacionalização dos bancos e das propriedades privadas'; 
+document.getElementById('label-botao4').innerHTML = 'Reconstituição da Internacional'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado26(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "A respeito da Revolução Socialista na Rússia e da URSS (União das Repúblicas Socialistas Soviéticas) é correto afirmar:"; 
+
+document.getElementById('label-botao1').innerHTML = 'A Revolução socialista que derrubou o Governo de Kerensky, o qual estabelecera uma república liberal-burguesa, exilou a Família Imperial Romanov em Paris'; 
+document.getElementById('label-botao2').innerHTML = ' A Revolução Socialista chegou ao poder com a liderança de Lênin e Leon Trotsky e se empenhou em manter a Rússia na Primeira Guerra Mundial, fiel ao tratado da Tríplice Entente'; 
+document.getElementById('label-botao3').innerHTML = 'Exceto a Comuna de Paris (1871), a Revolução Socialista na Rússia significou a instauração do primeiro governo inspirado na ideologia de Karl Marx - Frederico Engels.'; 
+document.getElementById('label-botao4').innerHTML = 'Após a morte de Lênin, Stálin triunfou na luta pelo poder com Trotsky e defendeu sempre a idéia da "Revolução Permanente", de que deveria o modelo ser levado ao restante da Europa e ao mundo.'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+
+function simulado27(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O que é o comunismo de guerra?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Isso nunca existiu'; 
+document.getElementById('label-botao2').innerHTML = 'Uma política que bolcheviques fizeram durante a guerra civil para organizar a Rússia (linha de atuação política e econômica)'; 
+document.getElementById('label-botao3').innerHTML = 'A mesma coisa do que teses de abril'; 
+document.getElementById('label-botao4').innerHTML = 'Uma ideia de Trotsky de como combater a Alemanha'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado28(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Após a morte de Lenin, houve uma disputa por poder. Quem ganhou essa disputa?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Lenin'; 
+document.getElementById('label-botao2').innerHTML = 'Stalin'; 
+document.getElementById('label-botao3').innerHTML = 'Trotsky'; 
+document.getElementById('label-botao4').innerHTML = 'Czar'; 
+} 
+
+respostacerta = document.getElementById('label-botao2').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+acerto(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado29(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Quem ganhou a guerra civil na rússia?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Exército vermelho'; 
+document.getElementById('label-botao2').innerHTML = 'Sovietes'; 
+document.getElementById('label-botao3').innerHTML = 'Exército Branco'; 
+document.getElementById('label-botao4').innerHTML = 'Mencheviques'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado30(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Por quem era o Exército Vermelho composto na Guerra Civil?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Sovietes'; 
+document.getElementById('label-botao2').innerHTML = 'Mencheviques'; 
+document.getElementById('label-botao3').innerHTML = 'Bolcheviques'; 
+document.getElementById('label-botao4').innerHTML = 'Stalin'; 
+} 
+
+respostacerta = document.getElementById('label-botao3').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+acerto(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado31(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "Qual a diferença entre Bolcheviques e Mencheviques?"; 
+
+document.getElementById('label-botao1').innerHTML = 'Mencheviques: queriam industrializar, e capitalizar a Rússia antes de torná-la socialista. Bolcheviques: queriam ir direto para o socialismo (radicais)'; 
+document.getElementById('label-botao2').innerHTML = 'Bolcheviques: queriam industrializar, e capitalizar a Rússia antes de torná-la socialista. Mencheviques: queriam ir direto para o socialismo (radicais)'; 
+document.getElementById('label-botao3').innerHTML = 'Bolcheviques eram apoiados por Trotsky e Mencheviques por Lenin'; 
+document.getElementById('label-botao4').innerHTML = 'Bolcheviques queriam implantar o Liberalismo e Mencheviques queriam estatizar as indústrias'; 
+} 
+
+respostacerta = document.getElementById('label-botao1').innerHTML; 
+
+if(check1 == true){ 
+acerto(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+erro(); 
+} 
+} 
+
+function simulado32(){ 
+
+if(check1 == false || check2 == false || check3 == false || check4 == false){ 
+document.getElementById('pergunta').innerHTML = "O fuzilamento dos manifestantes ordenados pelo Czar Nicolau II, ficou conhecido como:"; 
+
+document.getElementById('label-botao1').innerHTML = 'Massacre de Nanquim'; 
+document.getElementById('label-botao2').innerHTML = 'Massacre de Czar'; 
+document.getElementById('label-botao3').innerHTML = 'O Massacre Sangrento dos Sovietes'; 
+document.getElementById('label-botao4').innerHTML = 'Domingo Sangrento'; 
+} 
+
+respostacerta = document.getElementById('label-botao4').innerHTML; 
+
+if(check1 == true){ 
+erro(); 
+} 
+if(check2 == true){ 
+erro(); 
+} 
+if(check3 == true){ 
+erro(); 
+} 
+if(check4 == true){ 
+acerto(); 
+} 
+} 
+
+</script>
+
+</head>
+
+<body background="img/bgbody.jpg" onload="carrega()">
+
+<div class="header">
+
+    <hr><h1 id="titulo">Guia de História</h1><hr>
+    <br><h1 id="pergunta"></h1><br>
+     <!-- <br><h1 id="simulado-recebe"></h1><br> -->
+
+
+<div id="simulado"><table>
+<tr><td><button onclick="javascript:check1 = true;verifica();" id="btn-conteudo"> <label id="label-botao1"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check2 = true;verifica();" id="btn-conteudo"> <label id="label-botao2"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check3 = true;verifica();" id="btn-conteudo"> <label id="label-botao3"></label></button></td></tr><br>
+
+<tr><td><button onclick="javascript:check4 = true;verifica();" id="btn-conteudo"> <label id="label-botao4"></label></button></td></tr><br>
+</table></div> <!-- /simulado -->
+
+
+</div> <!-- header-->
+
+  <div style="display: none;">
+  <input type="radio" name="alternativa" id="alternativa1" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa2" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa3" value="verdadeira"> 
+  <input type="radio" name="alternativa" id="alternativa4" value="verdadeira">
+  </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</body>
+</html>
